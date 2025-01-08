@@ -11,5 +11,5 @@ class OnlineStore(OnlineBusiness):
     See: https://schema.org/OnlineStore
     Model depth: 4
     """
-    type_: str = Field(default="OnlineStore", alias='@type', const=True)
-    
+
+    type_: str = Field(default="OnlineStore", alias="@type", const=True)

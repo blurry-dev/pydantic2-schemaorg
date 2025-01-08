@@ -11,5 +11,5 @@ class RightHandDriving(SteeringPositionValue):
     See: https://schema.org/RightHandDriving
     Model depth: 6
     """
-    type_: str = Field(default="RightHandDriving", alias='@type', const=True)
-    
+
+    type_: str = Field(default="RightHandDriving", alias="@type", const=True)

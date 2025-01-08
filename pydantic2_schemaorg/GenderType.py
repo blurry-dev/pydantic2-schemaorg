@@ -11,5 +11,5 @@ class GenderType(Enumeration):
     See: https://schema.org/GenderType
     Model depth: 4
     """
-    type_: str = Field(default="GenderType", alias='@type', const=True)
-    
+
+    type_: str = Field(default="GenderType", alias="@type", const=True)

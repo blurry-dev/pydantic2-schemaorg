@@ -11,5 +11,5 @@ class TattooParlor(HealthAndBeautyBusiness):
     See: https://schema.org/TattooParlor
     Model depth: 5
     """
-    type_: str = Field(default="TattooParlor", alias='@type', const=True)
-    
+
+    type_: str = Field(default="TattooParlor", alias="@type", const=True)

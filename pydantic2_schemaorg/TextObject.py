@@ -11,5 +11,5 @@ class TextObject(MediaObject):
     See: https://schema.org/TextObject
     Model depth: 4
     """
-    type_: str = Field(default="TextObject", alias='@type', const=True)
-    
+
+    type_: str = Field(default="TextObject", alias="@type", const=True)

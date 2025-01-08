@@ -11,5 +11,5 @@ class KeepProduct(ReturnMethodEnumeration):
     See: https://schema.org/KeepProduct
     Model depth: 5
     """
-    type_: str = Field(default="KeepProduct", alias='@type', const=True)
-    
+
+    type_: str = Field(default="KeepProduct", alias="@type", const=True)

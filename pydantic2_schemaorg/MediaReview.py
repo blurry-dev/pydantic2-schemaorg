@@ -21,24 +21,44 @@ class MediaReview(Review):
     See: https://schema.org/MediaReview
     Model depth: 4
     """
-    type_: str = Field(default="MediaReview", alias='@type', const=True)
-    originalMediaContextDescription: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+
+    type_: str = Field(default="MediaReview", alias="@type", const=True)
+    originalMediaContextDescription: Optional[
+        Union[List[Union[str, "Text"]], str, "Text"]
+    ] = Field(
         default=None,
         description="Describes, in a [[MediaReview]] when dealing with [[DecontextualizedContent]], background information that can contribute to better interpretation of the [[MediaObject]].",
     )
-    originalMediaLink: Optional[Union[List[Union[AnyUrl, 'URL', 'MediaObject', 'WebPage', str]], AnyUrl, 'URL', 'MediaObject', 'WebPage', str]] = Field(
+    originalMediaLink: Optional[
+        Union[
+            List[Union[AnyUrl, "URL", "MediaObject", "WebPage", str]],
+            AnyUrl,
+            "URL",
+            "MediaObject",
+            "WebPage",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file.",
     )
-    mediaAuthenticityCategory: Optional[Union[List[Union['MediaManipulationRatingEnumeration', str]], 'MediaManipulationRatingEnumeration', str]] = Field(
+    mediaAuthenticityCategory: Optional[
+        Union[
+            List[Union["MediaManipulationRatingEnumeration", str]],
+            "MediaManipulationRatingEnumeration",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Text import Text
     from pydantic2_schemaorg.URL import URL
     from pydantic2_schemaorg.MediaObject import MediaObject
     from pydantic2_schemaorg.WebPage import WebPage
-    from pydantic2_schemaorg.MediaManipulationRatingEnumeration import MediaManipulationRatingEnumeration
+    from pydantic2_schemaorg.MediaManipulationRatingEnumeration import (
+        MediaManipulationRatingEnumeration,
+    )

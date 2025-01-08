@@ -14,12 +14,13 @@ class EducationalAudience(Audience):
     See: https://schema.org/EducationalAudience
     Model depth: 4
     """
-    type_: str = Field(default="EducationalAudience", alias='@type', const=True)
-    educationalRole: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+
+    type_: str = Field(default="EducationalAudience", alias="@type", const=True)
+    educationalRole: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="An educationalRole of an EducationalAudience.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Text import Text

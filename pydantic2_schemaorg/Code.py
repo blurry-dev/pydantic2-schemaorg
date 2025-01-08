@@ -12,5 +12,5 @@ class Code(CreativeWork):
     See: https://schema.org/Code
     Model depth: 3
     """
-    type_: str = Field(default="Code", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Code", alias="@type", const=True)

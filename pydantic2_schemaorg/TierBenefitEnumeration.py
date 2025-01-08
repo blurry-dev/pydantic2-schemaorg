@@ -11,5 +11,5 @@ class TierBenefitEnumeration(Enumeration):
     See: https://schema.org/TierBenefitEnumeration
     Model depth: 4
     """
-    type_: str = Field(default="TierBenefitEnumeration", alias='@type', const=True)
-    
+
+    type_: str = Field(default="TierBenefitEnumeration", alias="@type", const=True)

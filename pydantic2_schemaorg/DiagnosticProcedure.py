@@ -11,5 +11,5 @@ class DiagnosticProcedure(MedicalProcedure):
     See: https://schema.org/DiagnosticProcedure
     Model depth: 4
     """
-    type_: str = Field(default="DiagnosticProcedure", alias='@type', const=True)
-    
+
+    type_: str = Field(default="DiagnosticProcedure", alias="@type", const=True)

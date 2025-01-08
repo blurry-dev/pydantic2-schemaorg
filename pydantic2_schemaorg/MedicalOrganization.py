@@ -15,20 +15,25 @@ class MedicalOrganization(Organization):
     See: https://schema.org/MedicalOrganization
     Model depth: 3
     """
-    type_: str = Field(default="MedicalOrganization", alias='@type', const=True)
-    isAcceptingNewPatients: Optional[Union[List[Union[StrictBool, 'Boolean', str]], StrictBool, 'Boolean', str]] = Field(
+
+    type_: str = Field(default="MedicalOrganization", alias="@type", const=True)
+    isAcceptingNewPatients: Optional[
+        Union[List[Union[StrictBool, "Boolean", str]], StrictBool, "Boolean", str]
+    ] = Field(
         default=None,
         description="Whether the provider is accepting new patients.",
     )
-    medicalSpecialty: Optional[Union[List[Union['MedicalSpecialty', str]], 'MedicalSpecialty', str]] = Field(
+    medicalSpecialty: Optional[
+        Union[List[Union["MedicalSpecialty", str]], "MedicalSpecialty", str]
+    ] = Field(
         default=None,
         description="A medical specialty of the provider.",
     )
-    healthPlanNetworkId: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    healthPlanNetworkId: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="Name or unique ID of network. (Networks are often reused across different insurance plans.)",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Boolean import Boolean

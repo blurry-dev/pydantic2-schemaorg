@@ -15,40 +15,55 @@ class AnatomicalStructure(MedicalEntity):
     See: https://schema.org/AnatomicalStructure
     Model depth: 3
     """
-    type_: str = Field(default="AnatomicalStructure", alias='@type', const=True)
-    associatedPathophysiology: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+
+    type_: str = Field(default="AnatomicalStructure", alias="@type", const=True)
+    associatedPathophysiology: Optional[
+        Union[List[Union[str, "Text"]], str, "Text"]
+    ] = Field(
         default=None,
         description="If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.",
     )
-    relatedCondition: Optional[Union[List[Union['MedicalCondition', str]], 'MedicalCondition', str]] = Field(
+    relatedCondition: Optional[
+        Union[List[Union["MedicalCondition", str]], "MedicalCondition", str]
+    ] = Field(
         default=None,
         description="A medical condition associated with this anatomy.",
     )
-    relatedTherapy: Optional[Union[List[Union['MedicalTherapy', str]], 'MedicalTherapy', str]] = Field(
+    relatedTherapy: Optional[
+        Union[List[Union["MedicalTherapy", str]], "MedicalTherapy", str]
+    ] = Field(
         default=None,
         description="A medical therapy related to this anatomy.",
     )
-    partOfSystem: Optional[Union[List[Union['AnatomicalSystem', str]], 'AnatomicalSystem', str]] = Field(
+    partOfSystem: Optional[
+        Union[List[Union["AnatomicalSystem", str]], "AnatomicalSystem", str]
+    ] = Field(
         default=None,
         description="The anatomical or organ system that this structure is part of.",
     )
-    diagram: Optional[Union[List[Union['ImageObject', str]], 'ImageObject', str]] = Field(
-        default=None,
-        description="An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.",
+    diagram: Optional[Union[List[Union["ImageObject", str]], "ImageObject", str]] = (
+        Field(
+            default=None,
+            description="An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.",
+        )
     )
-    bodyLocation: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    bodyLocation: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="Location in the body of the anatomical structure.",
     )
-    connectedTo: Optional[Union[List[Union['AnatomicalStructure', str]], 'AnatomicalStructure', str]] = Field(
+    connectedTo: Optional[
+        Union[List[Union["AnatomicalStructure", str]], "AnatomicalStructure", str]
+    ] = Field(
         default=None,
         description="Other anatomical structures to which this structure is connected.",
     )
-    subStructure: Optional[Union[List[Union['AnatomicalStructure', str]], 'AnatomicalStructure', str]] = Field(
+    subStructure: Optional[
+        Union[List[Union["AnatomicalStructure", str]], "AnatomicalStructure", str]
+    ] = Field(
         default=None,
         description="Component (sub-)structure(s) that comprise this anatomical structure.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Text import Text

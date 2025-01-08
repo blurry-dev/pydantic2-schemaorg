@@ -15,16 +15,21 @@ class RentAction(TradeAction):
     See: https://schema.org/RentAction
     Model depth: 4
     """
-    type_: str = Field(default="RentAction", alias='@type', const=True)
-    landlord: Optional[Union[List[Union['Person', 'Organization', str]], 'Person', 'Organization', str]] = Field(
+
+    type_: str = Field(default="RentAction", alias="@type", const=True)
+    landlord: Optional[
+        Union[List[Union["Person", "Organization", str]], "Person", "Organization", str]
+    ] = Field(
         default=None,
         description="A sub property of participant. The owner of the real estate property.",
     )
-    realEstateAgent: Optional[Union[List[Union['RealEstateAgent', str]], 'RealEstateAgent', str]] = Field(
+    realEstateAgent: Optional[
+        Union[List[Union["RealEstateAgent", str]], "RealEstateAgent", str]
+    ] = Field(
         default=None,
         description="A sub property of participant. The real estate agent involved in the action.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Person import Person

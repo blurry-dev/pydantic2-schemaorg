@@ -18,16 +18,17 @@ class PlayAction(Action):
     See: https://schema.org/PlayAction
     Model depth: 3
     """
-    type_: str = Field(default="PlayAction", alias='@type', const=True)
-    audience: Optional[Union[List[Union['Audience', str]], 'Audience', str]] = Field(
+
+    type_: str = Field(default="PlayAction", alias="@type", const=True)
+    audience: Optional[Union[List[Union["Audience", str]], "Audience", str]] = Field(
         default=None,
         description="An intended audience, i.e. a group for whom something was created.",
     )
-    event: Optional[Union[List[Union['Event', str]], 'Event', str]] = Field(
+    event: Optional[Union[List[Union["Event", str]], "Event", str]] = Field(
         default=None,
         description="Upcoming or past event associated with this place, organization, or action.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Audience import Audience

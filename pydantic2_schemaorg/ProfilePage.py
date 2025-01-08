@@ -11,5 +11,5 @@ class ProfilePage(WebPage):
     See: https://schema.org/ProfilePage
     Model depth: 4
     """
-    type_: str = Field(default="ProfilePage", alias='@type', const=True)
-    
+
+    type_: str = Field(default="ProfilePage", alias="@type", const=True)

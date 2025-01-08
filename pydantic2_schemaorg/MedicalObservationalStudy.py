@@ -18,12 +18,21 @@ class MedicalObservationalStudy(MedicalStudy):
     See: https://schema.org/MedicalObservationalStudy
     Model depth: 4
     """
-    type_: str = Field(default="MedicalObservationalStudy", alias='@type', const=True)
-    studyDesign: Optional[Union[List[Union['MedicalObservationalStudyDesign', str]], 'MedicalObservationalStudyDesign', str]] = Field(
+
+    type_: str = Field(default="MedicalObservationalStudy", alias="@type", const=True)
+    studyDesign: Optional[
+        Union[
+            List[Union["MedicalObservationalStudyDesign", str]],
+            "MedicalObservationalStudyDesign",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="Specifics about the observational study design (enumerated).",
     )
-    
+
 
 if TYPE_CHECKING:
-    from pydantic2_schemaorg.MedicalObservationalStudyDesign import MedicalObservationalStudyDesign
+    from pydantic2_schemaorg.MedicalObservationalStudyDesign import (
+        MedicalObservationalStudyDesign,
+    )

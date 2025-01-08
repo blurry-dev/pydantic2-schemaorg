@@ -12,5 +12,5 @@ class MediaEnumeration(Enumeration):
     See: https://schema.org/MediaEnumeration
     Model depth: 4
     """
-    type_: str = Field(default="MediaEnumeration", alias='@type', const=True)
-    
+
+    type_: str = Field(default="MediaEnumeration", alias="@type", const=True)

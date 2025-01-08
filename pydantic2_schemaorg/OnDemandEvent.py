@@ -11,5 +11,5 @@ class OnDemandEvent(PublicationEvent):
     See: https://schema.org/OnDemandEvent
     Model depth: 4
     """
-    type_: str = Field(default="OnDemandEvent", alias='@type', const=True)
-    
+
+    type_: str = Field(default="OnDemandEvent", alias="@type", const=True)

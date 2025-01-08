@@ -16,32 +16,76 @@ class LodgingReservation(Reservation):
     See: https://schema.org/LodgingReservation
     Model depth: 4
     """
-    type_: str = Field(default="LodgingReservation", alias='@type', const=True)
-    lodgingUnitType: Optional[Union[List[Union[str, 'Text', 'QualitativeValue']], str, 'Text', 'QualitativeValue']] = Field(
+
+    type_: str = Field(default="LodgingReservation", alias="@type", const=True)
+    lodgingUnitType: Optional[
+        Union[
+            List[Union[str, "Text", "QualitativeValue"]],
+            str,
+            "Text",
+            "QualitativeValue",
+        ]
+    ] = Field(
         default=None,
         description="Textual description of the unit type (including suite vs. room, size of bed, etc.).",
     )
-    numChildren: Optional[Union[List[Union[int, 'Integer', 'QuantitativeValue', str]], int, 'Integer', 'QuantitativeValue', str]] = Field(
+    numChildren: Optional[
+        Union[
+            List[Union[int, "Integer", "QuantitativeValue", str]],
+            int,
+            "Integer",
+            "QuantitativeValue",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The number of children staying in the unit.",
     )
-    lodgingUnitDescription: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
-        default=None,
-        description="A full description of the lodging unit.",
+    lodgingUnitDescription: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = (
+        Field(
+            default=None,
+            description="A full description of the lodging unit.",
+        )
     )
-    checkoutTime: Optional[Union[List[Union[datetime, 'DateTime', time, 'Time', str]], datetime, 'DateTime', time, 'Time', str]] = Field(
+    checkoutTime: Optional[
+        Union[
+            List[Union[datetime, "DateTime", time, "Time", str]],
+            datetime,
+            "DateTime",
+            time,
+            "Time",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The latest someone may check out of a lodging establishment.",
     )
-    numAdults: Optional[Union[List[Union[int, 'Integer', 'QuantitativeValue', str]], int, 'Integer', 'QuantitativeValue', str]] = Field(
+    numAdults: Optional[
+        Union[
+            List[Union[int, "Integer", "QuantitativeValue", str]],
+            int,
+            "Integer",
+            "QuantitativeValue",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The number of adults staying in the unit.",
     )
-    checkinTime: Optional[Union[List[Union[datetime, 'DateTime', time, 'Time', str]], datetime, 'DateTime', time, 'Time', str]] = Field(
+    checkinTime: Optional[
+        Union[
+            List[Union[datetime, "DateTime", time, "Time", str]],
+            datetime,
+            "DateTime",
+            time,
+            "Time",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The earliest someone may check into a lodging establishment.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Text import Text

@@ -16,16 +16,21 @@ class MemberProgram(Intangible):
     See: https://schema.org/MemberProgram
     Model depth: 3
     """
-    type_: str = Field(default="MemberProgram", alias='@type', const=True)
-    hasTiers: Optional[Union[List[Union['MemberProgramTier', str]], 'MemberProgramTier', str]] = Field(
+
+    type_: str = Field(default="MemberProgram", alias="@type", const=True)
+    hasTiers: Optional[
+        Union[List[Union["MemberProgramTier", str]], "MemberProgramTier", str]
+    ] = Field(
         default=None,
         description="The tiers of a member program.",
     )
-    hostingOrganization: Optional[Union[List[Union['Organization', str]], 'Organization', str]] = Field(
+    hostingOrganization: Optional[
+        Union[List[Union["Organization", str]], "Organization", str]
+    ] = Field(
         default=None,
         description="The Organization (airline, travelers' club, retailer, etc.) the membership is made with or which offers the MemberProgram.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.MemberProgramTier import MemberProgramTier

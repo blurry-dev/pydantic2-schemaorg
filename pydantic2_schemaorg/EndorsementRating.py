@@ -17,5 +17,5 @@ class EndorsementRating(Rating):
     See: https://schema.org/EndorsementRating
     Model depth: 4
     """
-    type_: str = Field(default="EndorsementRating", alias='@type', const=True)
-    
+
+    type_: str = Field(default="EndorsementRating", alias="@type", const=True)

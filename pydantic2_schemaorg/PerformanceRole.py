@@ -15,12 +15,13 @@ class PerformanceRole(Role):
     See: https://schema.org/PerformanceRole
     Model depth: 4
     """
-    type_: str = Field(default="PerformanceRole", alias='@type', const=True)
-    characterName: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+
+    type_: str = Field(default="PerformanceRole", alias="@type", const=True)
+    characterName: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="The name of a character played in some acting or performing role, i.e. in a PerformanceRole.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Text import Text

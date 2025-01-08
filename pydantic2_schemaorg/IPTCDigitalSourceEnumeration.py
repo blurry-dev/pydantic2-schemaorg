@@ -17,5 +17,7 @@ class IPTCDigitalSourceEnumeration(MediaEnumeration):
     See: https://schema.org/IPTCDigitalSourceEnumeration
     Model depth: 5
     """
-    type_: str = Field(default="IPTCDigitalSourceEnumeration", alias='@type', const=True)
-    
+
+    type_: str = Field(
+        default="IPTCDigitalSourceEnumeration", alias="@type", const=True
+    )

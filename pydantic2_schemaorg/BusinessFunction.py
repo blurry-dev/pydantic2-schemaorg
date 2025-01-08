@@ -17,5 +17,5 @@ class BusinessFunction(Enumeration):
     See: https://schema.org/BusinessFunction
     Model depth: 4
     """
-    type_: str = Field(default="BusinessFunction", alias='@type', const=True)
-    
+
+    type_: str = Field(default="BusinessFunction", alias="@type", const=True)

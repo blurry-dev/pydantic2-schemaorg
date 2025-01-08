@@ -11,5 +11,5 @@ class MobileWebPlatform(DigitalPlatformEnumeration):
     See: https://schema.org/MobileWebPlatform
     Model depth: 5
     """
-    type_: str = Field(default="MobileWebPlatform", alias='@type', const=True)
-    
+
+    type_: str = Field(default="MobileWebPlatform", alias="@type", const=True)

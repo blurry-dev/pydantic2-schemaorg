@@ -22,5 +22,5 @@ class EventSeries(Series, Event):
     See: https://schema.org/EventSeries
     Model depth: 3
     """
-    type_: str = Field(default="EventSeries", alias='@type', const=True)
-    
+
+    type_: str = Field(default="EventSeries", alias="@type", const=True)

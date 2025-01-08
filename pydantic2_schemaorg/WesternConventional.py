@@ -12,5 +12,5 @@ class WesternConventional(MedicineSystem):
     See: https://schema.org/WesternConventional
     Model depth: 6
     """
-    type_: str = Field(default="WesternConventional", alias='@type', const=True)
-    
+
+    type_: str = Field(default="WesternConventional", alias="@type", const=True)

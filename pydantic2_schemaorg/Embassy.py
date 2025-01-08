@@ -11,5 +11,5 @@ class Embassy(GovernmentBuilding):
     See: https://schema.org/Embassy
     Model depth: 5
     """
-    type_: str = Field(default="Embassy", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Embassy", alias="@type", const=True)

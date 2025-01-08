@@ -19,60 +19,98 @@ class OfferShippingDetails(StructuredValue):
     See: https://schema.org/OfferShippingDetails
     Model depth: 4
     """
-    type_: str = Field(default="OfferShippingDetails", alias='@type', const=True)
-    doesNotShip: Optional[Union[List[Union[StrictBool, 'Boolean', str]], StrictBool, 'Boolean', str]] = Field(
+
+    type_: str = Field(default="OfferShippingDetails", alias="@type", const=True)
+    doesNotShip: Optional[
+        Union[List[Union[StrictBool, "Boolean", str]], StrictBool, "Boolean", str]
+    ] = Field(
         default=None,
         description="Indicates when shipping to a particular [[shippingDestination]] is not available.",
     )
-    shippingRate: Optional[Union[List[Union['MonetaryAmount', str]], 'MonetaryAmount', str]] = Field(
+    shippingRate: Optional[
+        Union[List[Union["MonetaryAmount", str]], "MonetaryAmount", str]
+    ] = Field(
         default=None,
         description="The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.",
     )
-    weight: Optional[Union[List[Union['QuantitativeValue', str]], 'QuantitativeValue', str]] = Field(
+    weight: Optional[
+        Union[List[Union["QuantitativeValue", str]], "QuantitativeValue", str]
+    ] = Field(
         default=None,
         description="The weight of the product or person.",
     )
-    width: Optional[Union[List[Union['Distance', 'QuantitativeValue', str]], 'Distance', 'QuantitativeValue', str]] = Field(
+    width: Optional[
+        Union[
+            List[Union["Distance", "QuantitativeValue", str]],
+            "Distance",
+            "QuantitativeValue",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The width of the item.",
     )
-    shippingLabel: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    shippingLabel: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).",
     )
-    shippingDestination: Optional[Union[List[Union['DefinedRegion', str]], 'DefinedRegion', str]] = Field(
+    shippingDestination: Optional[
+        Union[List[Union["DefinedRegion", str]], "DefinedRegion", str]
+    ] = Field(
         default=None,
         description="indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.",
     )
-    shippingSettingsLink: Optional[Union[List[Union[AnyUrl, 'URL', str]], AnyUrl, 'URL', str]] = Field(
+    shippingSettingsLink: Optional[
+        Union[List[Union[AnyUrl, "URL", str]], AnyUrl, "URL", str]
+    ] = Field(
         default=None,
         description="Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.",
     )
-    validForMemberTier: Optional[Union[List[Union['MemberProgramTier', str]], 'MemberProgramTier', str]] = Field(
+    validForMemberTier: Optional[
+        Union[List[Union["MemberProgramTier", str]], "MemberProgramTier", str]
+    ] = Field(
         default=None,
         description="The membership program tier an Offer (or a PriceSpecification, OfferShippingDetails, or MerchantReturnPolicy under an Offer) is valid for.",
     )
-    deliveryTime: Optional[Union[List[Union['ShippingDeliveryTime', str]], 'ShippingDeliveryTime', str]] = Field(
+    deliveryTime: Optional[
+        Union[List[Union["ShippingDeliveryTime", str]], "ShippingDeliveryTime", str]
+    ] = Field(
         default=None,
         description="The total delay between the receipt of the order and the goods reaching the final customer.",
     )
-    height: Optional[Union[List[Union['Distance', 'QuantitativeValue', str]], 'Distance', 'QuantitativeValue', str]] = Field(
+    height: Optional[
+        Union[
+            List[Union["Distance", "QuantitativeValue", str]],
+            "Distance",
+            "QuantitativeValue",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The height of the item.",
     )
-    shippingOrigin: Optional[Union[List[Union['DefinedRegion', str]], 'DefinedRegion', str]] = Field(
+    shippingOrigin: Optional[
+        Union[List[Union["DefinedRegion", str]], "DefinedRegion", str]
+    ] = Field(
         default=None,
         description="Indicates the origin of a shipment, i.e. where it should be coming from.",
     )
-    transitTimeLabel: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    transitTimeLabel: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).",
     )
-    depth: Optional[Union[List[Union['Distance', 'QuantitativeValue', str]], 'Distance', 'QuantitativeValue', str]] = Field(
+    depth: Optional[
+        Union[
+            List[Union["Distance", "QuantitativeValue", str]],
+            "Distance",
+            "QuantitativeValue",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The depth of the item.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Boolean import Boolean

@@ -11,5 +11,5 @@ class VenueMap(MapCategoryType):
     See: https://schema.org/VenueMap
     Model depth: 5
     """
-    type_: str = Field(default="VenueMap", alias='@type', const=True)
-    
+
+    type_: str = Field(default="VenueMap", alias="@type", const=True)

@@ -11,5 +11,5 @@ class AlcoholConsideration(AdultOrientedEnumeration):
     See: https://schema.org/AlcoholConsideration
     Model depth: 5
     """
-    type_: str = Field(default="AlcoholConsideration", alias='@type', const=True)
-    
+
+    type_: str = Field(default="AlcoholConsideration", alias="@type", const=True)

@@ -18,5 +18,5 @@ class Campground(LodgingBusiness, CivicStructure):
     See: https://schema.org/Campground
     Model depth: 4
     """
-    type_: str = Field(default="Campground", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Campground", alias="@type", const=True)

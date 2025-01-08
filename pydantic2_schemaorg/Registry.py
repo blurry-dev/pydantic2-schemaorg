@@ -2,7 +2,9 @@ from __future__ import annotations
 
 
 from pydantic.v1 import Field
-from pydantic2_schemaorg.MedicalObservationalStudyDesign import MedicalObservationalStudyDesign
+from pydantic2_schemaorg.MedicalObservationalStudyDesign import (
+    MedicalObservationalStudyDesign,
+)
 
 
 class Registry(MedicalObservationalStudyDesign):
@@ -11,5 +13,5 @@ class Registry(MedicalObservationalStudyDesign):
     See: https://schema.org/Registry
     Model depth: 6
     """
-    type_: str = Field(default="Registry", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Registry", alias="@type", const=True)

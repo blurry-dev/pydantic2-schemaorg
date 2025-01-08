@@ -17,16 +17,19 @@ class LinkRole(Role):
     See: https://schema.org/LinkRole
     Model depth: 4
     """
-    type_: str = Field(default="LinkRole", alias='@type', const=True)
-    inLanguage: Optional[Union[List[Union[str, 'Text', 'Language']], str, 'Text', 'Language']] = Field(
+
+    type_: str = Field(default="LinkRole", alias="@type", const=True)
+    inLanguage: Optional[
+        Union[List[Union[str, "Text", "Language"]], str, "Text", "Language"]
+    ] = Field(
         default=None,
         description="The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
     )
-    linkRelationship: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    linkRelationship: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="Indicates the relationship type of a Web link.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Text import Text

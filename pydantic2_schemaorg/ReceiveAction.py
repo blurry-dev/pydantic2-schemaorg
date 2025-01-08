@@ -17,16 +17,27 @@ class ReceiveAction(TransferAction):
     See: https://schema.org/ReceiveAction
     Model depth: 4
     """
-    type_: str = Field(default="ReceiveAction", alias='@type', const=True)
-    deliveryMethod: Optional[Union[List[Union['DeliveryMethod', str]], 'DeliveryMethod', str]] = Field(
+
+    type_: str = Field(default="ReceiveAction", alias="@type", const=True)
+    deliveryMethod: Optional[
+        Union[List[Union["DeliveryMethod", str]], "DeliveryMethod", str]
+    ] = Field(
         default=None,
         description="A sub property of instrument. The method of delivery.",
     )
-    sender: Optional[Union[List[Union['Audience', 'Person', 'Organization', str]], 'Audience', 'Person', 'Organization', str]] = Field(
+    sender: Optional[
+        Union[
+            List[Union["Audience", "Person", "Organization", str]],
+            "Audience",
+            "Person",
+            "Organization",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="A sub property of participant. The participant who is at the sending end of the action.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.DeliveryMethod import DeliveryMethod

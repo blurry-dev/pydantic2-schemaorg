@@ -2,7 +2,9 @@ from __future__ import annotations
 
 
 from pydantic.v1 import Field
-from pydantic2_schemaorg.MediaManipulationRatingEnumeration import MediaManipulationRatingEnumeration
+from pydantic2_schemaorg.MediaManipulationRatingEnumeration import (
+    MediaManipulationRatingEnumeration,
+)
 
 
 class SatireOrParodyContent(MediaManipulationRatingEnumeration):
@@ -22,5 +24,5 @@ class SatireOrParodyContent(MediaManipulationRatingEnumeration):
     See: https://schema.org/SatireOrParodyContent
     Model depth: 5
     """
-    type_: str = Field(default="SatireOrParodyContent", alias='@type', const=True)
-    
+
+    type_: str = Field(default="SatireOrParodyContent", alias="@type", const=True)

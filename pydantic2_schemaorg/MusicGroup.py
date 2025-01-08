@@ -15,32 +15,46 @@ class MusicGroup(PerformingGroup):
     See: https://schema.org/MusicGroup
     Model depth: 4
     """
-    type_: str = Field(default="MusicGroup", alias='@type', const=True)
-    genre: Optional[Union[List[Union[AnyUrl, 'URL', str, 'Text']], AnyUrl, 'URL', str, 'Text']] = Field(
+
+    type_: str = Field(default="MusicGroup", alias="@type", const=True)
+    genre: Optional[
+        Union[List[Union[AnyUrl, "URL", str, "Text"]], AnyUrl, "URL", str, "Text"]
+    ] = Field(
         default=None,
         description="Genre of the creative work, broadcast channel or group.",
     )
-    musicGroupMember: Optional[Union[List[Union['Person', str]], 'Person', str]] = Field(
-        default=None,
-        description="A member of a music group&#x2014;for example, John, Paul, George, or Ringo.",
+    musicGroupMember: Optional[Union[List[Union["Person", str]], "Person", str]] = (
+        Field(
+            default=None,
+            description="A member of a music group&#x2014;for example, John, Paul, George, or Ringo.",
+        )
     )
-    albums: Optional[Union[List[Union['MusicAlbum', str]], 'MusicAlbum', str]] = Field(
+    albums: Optional[Union[List[Union["MusicAlbum", str]], "MusicAlbum", str]] = Field(
         default=None,
         description="A collection of music albums.",
     )
-    tracks: Optional[Union[List[Union['MusicRecording', str]], 'MusicRecording', str]] = Field(
+    tracks: Optional[
+        Union[List[Union["MusicRecording", str]], "MusicRecording", str]
+    ] = Field(
         default=None,
         description="A music recording (track)&#x2014;usually a single song.",
     )
-    album: Optional[Union[List[Union['MusicAlbum', str]], 'MusicAlbum', str]] = Field(
+    album: Optional[Union[List[Union["MusicAlbum", str]], "MusicAlbum", str]] = Field(
         default=None,
         description="A music album.",
     )
-    track: Optional[Union[List[Union['ItemList', 'MusicRecording', str]], 'ItemList', 'MusicRecording', str]] = Field(
+    track: Optional[
+        Union[
+            List[Union["ItemList", "MusicRecording", str]],
+            "ItemList",
+            "MusicRecording",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.URL import URL

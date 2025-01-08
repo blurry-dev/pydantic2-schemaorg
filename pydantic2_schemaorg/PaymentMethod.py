@@ -20,12 +20,15 @@ class PaymentMethod(Intangible):
     See: https://schema.org/PaymentMethod
     Model depth: 3
     """
-    type_: str = Field(default="PaymentMethod", alias='@type', const=True)
-    paymentMethodType: Optional[Union[List[Union['PaymentMethodType', str]], 'PaymentMethodType', str]] = Field(
+
+    type_: str = Field(default="PaymentMethod", alias="@type", const=True)
+    paymentMethodType: Optional[
+        Union[List[Union["PaymentMethodType", str]], "PaymentMethodType", str]
+    ] = Field(
         default=None,
         description="The type of a payment method.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.PaymentMethodType import PaymentMethodType

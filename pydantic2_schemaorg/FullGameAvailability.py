@@ -11,5 +11,5 @@ class FullGameAvailability(GameAvailabilityEnumeration):
     See: https://schema.org/FullGameAvailability
     Model depth: 5
     """
-    type_: str = Field(default="FullGameAvailability", alias='@type', const=True)
-    
+
+    type_: str = Field(default="FullGameAvailability", alias="@type", const=True)

@@ -15,12 +15,13 @@ class TravelAction(MoveAction):
     See: https://schema.org/TravelAction
     Model depth: 4
     """
-    type_: str = Field(default="TravelAction", alias='@type', const=True)
-    distance: Optional[Union[List[Union['Distance', str]], 'Distance', str]] = Field(
+
+    type_: str = Field(default="TravelAction", alias="@type", const=True)
+    distance: Optional[Union[List[Union["Distance", str]], "Distance", str]] = Field(
         default=None,
         description="The distance travelled, e.g. exercising or travelling.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Distance import Distance

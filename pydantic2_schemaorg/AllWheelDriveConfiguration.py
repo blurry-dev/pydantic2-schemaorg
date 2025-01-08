@@ -2,7 +2,9 @@ from __future__ import annotations
 
 
 from pydantic.v1 import Field
-from pydantic2_schemaorg.DriveWheelConfigurationValue import DriveWheelConfigurationValue
+from pydantic2_schemaorg.DriveWheelConfigurationValue import (
+    DriveWheelConfigurationValue,
+)
 
 
 class AllWheelDriveConfiguration(DriveWheelConfigurationValue):
@@ -11,5 +13,5 @@ class AllWheelDriveConfiguration(DriveWheelConfigurationValue):
     See: https://schema.org/AllWheelDriveConfiguration
     Model depth: 6
     """
-    type_: str = Field(default="AllWheelDriveConfiguration", alias='@type', const=True)
-    
+
+    type_: str = Field(default="AllWheelDriveConfiguration", alias="@type", const=True)

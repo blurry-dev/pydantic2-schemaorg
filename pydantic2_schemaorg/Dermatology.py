@@ -12,5 +12,5 @@ class Dermatology(MedicalSpecialty, MedicalBusiness):
     See: https://schema.org/Dermatology
     Model depth: 5
     """
-    type_: str = Field(default="Dermatology", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Dermatology", alias="@type", const=True)

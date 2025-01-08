@@ -11,5 +11,7 @@ class MerchantReturnUnlimitedWindow(MerchantReturnEnumeration):
     See: https://schema.org/MerchantReturnUnlimitedWindow
     Model depth: 5
     """
-    type_: str = Field(default="MerchantReturnUnlimitedWindow", alias='@type', const=True)
-    
+
+    type_: str = Field(
+        default="MerchantReturnUnlimitedWindow", alias="@type", const=True
+    )

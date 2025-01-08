@@ -11,5 +11,7 @@ class WearableMeasurementTypeEnumeration(MeasurementTypeEnumeration):
     See: https://schema.org/WearableMeasurementTypeEnumeration
     Model depth: 5
     """
-    type_: str = Field(default="WearableMeasurementTypeEnumeration", alias='@type', const=True)
-    
+
+    type_: str = Field(
+        default="WearableMeasurementTypeEnumeration", alias="@type", const=True
+    )

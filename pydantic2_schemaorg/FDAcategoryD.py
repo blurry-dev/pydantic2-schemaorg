@@ -13,5 +13,5 @@ class FDAcategoryD(DrugPregnancyCategory):
     See: https://schema.org/FDAcategoryD
     Model depth: 6
     """
-    type_: str = Field(default="FDAcategoryD", alias='@type', const=True)
-    
+
+    type_: str = Field(default="FDAcategoryD", alias="@type", const=True)

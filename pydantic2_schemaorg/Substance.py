@@ -15,16 +15,19 @@ class Substance(MedicalEntity):
     See: https://schema.org/Substance
     Model depth: 3
     """
-    type_: str = Field(default="Substance", alias='@type', const=True)
-    maximumIntake: Optional[Union[List[Union['MaximumDoseSchedule', str]], 'MaximumDoseSchedule', str]] = Field(
+
+    type_: str = Field(default="Substance", alias="@type", const=True)
+    maximumIntake: Optional[
+        Union[List[Union["MaximumDoseSchedule", str]], "MaximumDoseSchedule", str]
+    ] = Field(
         default=None,
         description="Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
     )
-    activeIngredient: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    activeIngredient: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="An active ingredient, typically chemical compounds and/or biologic substances.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.MaximumDoseSchedule import MaximumDoseSchedule

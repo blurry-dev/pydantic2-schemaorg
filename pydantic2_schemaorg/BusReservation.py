@@ -12,5 +12,5 @@ class BusReservation(Reservation):
     See: https://schema.org/BusReservation
     Model depth: 4
     """
-    type_: str = Field(default="BusReservation", alias='@type', const=True)
-    
+
+    type_: str = Field(default="BusReservation", alias="@type", const=True)

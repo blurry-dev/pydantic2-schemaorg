@@ -15,16 +15,36 @@ class EmployeeRole(OrganizationRole):
     See: https://schema.org/EmployeeRole
     Model depth: 5
     """
-    type_: str = Field(default="EmployeeRole", alias='@type', const=True)
-    salaryCurrency: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+
+    type_: str = Field(default="EmployeeRole", alias="@type", const=True)
+    salaryCurrency: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee.",
     )
-    baseSalary: Optional[Union[List[Union[StrictInt, StrictFloat, 'Number', 'PriceSpecification', 'MonetaryAmount', str]], StrictInt, StrictFloat, 'Number', 'PriceSpecification', 'MonetaryAmount', str]] = Field(
+    baseSalary: Optional[
+        Union[
+            List[
+                Union[
+                    StrictInt,
+                    StrictFloat,
+                    "Number",
+                    "PriceSpecification",
+                    "MonetaryAmount",
+                    str,
+                ]
+            ],
+            StrictInt,
+            StrictFloat,
+            "Number",
+            "PriceSpecification",
+            "MonetaryAmount",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The base salary of the job or of an employee in an EmployeeRole.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Text import Text

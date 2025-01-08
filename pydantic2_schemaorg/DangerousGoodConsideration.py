@@ -13,5 +13,5 @@ class DangerousGoodConsideration(AdultOrientedEnumeration):
     See: https://schema.org/DangerousGoodConsideration
     Model depth: 5
     """
-    type_: str = Field(default="DangerousGoodConsideration", alias='@type', const=True)
-    
+
+    type_: str = Field(default="DangerousGoodConsideration", alias="@type", const=True)

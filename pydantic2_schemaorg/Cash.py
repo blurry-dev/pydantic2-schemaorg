@@ -11,5 +11,5 @@ class Cash(PaymentMethodType):
     See: https://schema.org/Cash
     Model depth: 5
     """
-    type_: str = Field(default="Cash", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Cash", alias="@type", const=True)

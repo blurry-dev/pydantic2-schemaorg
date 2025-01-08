@@ -12,5 +12,5 @@ class GenericWebPlatform(DigitalPlatformEnumeration):
     See: https://schema.org/GenericWebPlatform
     Model depth: 5
     """
-    type_: str = Field(default="GenericWebPlatform", alias='@type', const=True)
-    
+
+    type_: str = Field(default="GenericWebPlatform", alias="@type", const=True)

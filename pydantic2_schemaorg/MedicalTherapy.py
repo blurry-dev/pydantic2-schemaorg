@@ -17,20 +17,32 @@ class MedicalTherapy(TherapeuticProcedure):
     See: https://schema.org/MedicalTherapy
     Model depth: 5
     """
-    type_: str = Field(default="MedicalTherapy", alias='@type', const=True)
-    seriousAdverseOutcome: Optional[Union[List[Union['MedicalEntity', str]], 'MedicalEntity', str]] = Field(
+
+    type_: str = Field(default="MedicalTherapy", alias="@type", const=True)
+    seriousAdverseOutcome: Optional[
+        Union[List[Union["MedicalEntity", str]], "MedicalEntity", str]
+    ] = Field(
         default=None,
         description="A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.",
     )
-    contraindication: Optional[Union[List[Union[str, 'Text', 'MedicalContraindication']], str, 'Text', 'MedicalContraindication']] = Field(
+    contraindication: Optional[
+        Union[
+            List[Union[str, "Text", "MedicalContraindication"]],
+            str,
+            "Text",
+            "MedicalContraindication",
+        ]
+    ] = Field(
         default=None,
         description="A contraindication for this therapy.",
     )
-    duplicateTherapy: Optional[Union[List[Union['MedicalTherapy', str]], 'MedicalTherapy', str]] = Field(
+    duplicateTherapy: Optional[
+        Union[List[Union["MedicalTherapy", str]], "MedicalTherapy", str]
+    ] = Field(
         default=None,
         description="A therapy that duplicates or overlaps this one.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.MedicalEntity import MedicalEntity

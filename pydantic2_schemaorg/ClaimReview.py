@@ -14,12 +14,13 @@ class ClaimReview(Review):
     See: https://schema.org/ClaimReview
     Model depth: 4
     """
-    type_: str = Field(default="ClaimReview", alias='@type', const=True)
-    claimReviewed: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+
+    type_: str = Field(default="ClaimReview", alias="@type", const=True)
+    claimReviewed: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="A short summary of the specific claims reviewed in a ClaimReview.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Text import Text

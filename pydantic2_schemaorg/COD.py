@@ -11,5 +11,5 @@ class COD(PaymentMethodType):
     See: https://schema.org/COD
     Model depth: 5
     """
-    type_: str = Field(default="COD", alias='@type', const=True)
-    
+
+    type_: str = Field(default="COD", alias="@type", const=True)

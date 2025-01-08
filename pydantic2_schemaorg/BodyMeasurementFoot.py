@@ -2,7 +2,9 @@ from __future__ import annotations
 
 
 from pydantic.v1 import Field
-from pydantic2_schemaorg.BodyMeasurementTypeEnumeration import BodyMeasurementTypeEnumeration
+from pydantic2_schemaorg.BodyMeasurementTypeEnumeration import (
+    BodyMeasurementTypeEnumeration,
+)
 
 
 class BodyMeasurementFoot(BodyMeasurementTypeEnumeration):
@@ -12,5 +14,5 @@ class BodyMeasurementFoot(BodyMeasurementTypeEnumeration):
     See: https://schema.org/BodyMeasurementFoot
     Model depth: 6
     """
-    type_: str = Field(default="BodyMeasurementFoot", alias='@type', const=True)
-    
+
+    type_: str = Field(default="BodyMeasurementFoot", alias="@type", const=True)

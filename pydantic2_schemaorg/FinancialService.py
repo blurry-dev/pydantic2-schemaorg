@@ -15,12 +15,15 @@ class FinancialService(LocalBusiness):
     See: https://schema.org/FinancialService
     Model depth: 4
     """
-    type_: str = Field(default="FinancialService", alias='@type', const=True)
-    feesAndCommissionsSpecification: Optional[Union[List[Union[AnyUrl, 'URL', str, 'Text']], AnyUrl, 'URL', str, 'Text']] = Field(
+
+    type_: str = Field(default="FinancialService", alias="@type", const=True)
+    feesAndCommissionsSpecification: Optional[
+        Union[List[Union[AnyUrl, "URL", str, "Text"]], AnyUrl, "URL", str, "Text"]
+    ] = Field(
         default=None,
         description="Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.URL import URL

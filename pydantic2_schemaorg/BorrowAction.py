@@ -15,12 +15,15 @@ class BorrowAction(TransferAction):
     See: https://schema.org/BorrowAction
     Model depth: 4
     """
-    type_: str = Field(default="BorrowAction", alias='@type', const=True)
-    lender: Optional[Union[List[Union['Person', 'Organization', str]], 'Person', 'Organization', str]] = Field(
+
+    type_: str = Field(default="BorrowAction", alias="@type", const=True)
+    lender: Optional[
+        Union[List[Union["Person", "Organization", str]], "Person", "Organization", str]
+    ] = Field(
         default=None,
         description="A sub property of participant. The person that lends the object being borrowed.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Person import Person

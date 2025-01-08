@@ -11,5 +11,5 @@ class TierBenefitLoyaltyPoints(TierBenefitEnumeration):
     See: https://schema.org/TierBenefitLoyaltyPoints
     Model depth: 5
     """
-    type_: str = Field(default="TierBenefitLoyaltyPoints", alias='@type', const=True)
-    
+
+    type_: str = Field(default="TierBenefitLoyaltyPoints", alias="@type", const=True)

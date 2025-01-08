@@ -11,5 +11,5 @@ class VacationRental(LodgingBusiness):
     See: https://schema.org/VacationRental
     Model depth: 5
     """
-    type_: str = Field(default="VacationRental", alias='@type', const=True)
-    
+
+    type_: str = Field(default="VacationRental", alias="@type", const=True)

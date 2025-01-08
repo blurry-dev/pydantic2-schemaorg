@@ -2,7 +2,9 @@ from __future__ import annotations
 
 
 from pydantic.v1 import Field
-from pydantic2_schemaorg.MediaManipulationRatingEnumeration import MediaManipulationRatingEnumeration
+from pydantic2_schemaorg.MediaManipulationRatingEnumeration import (
+    MediaManipulationRatingEnumeration,
+)
 
 
 class DecontextualizedContent(MediaManipulationRatingEnumeration):
@@ -23,5 +25,5 @@ class DecontextualizedContent(MediaManipulationRatingEnumeration):
     See: https://schema.org/DecontextualizedContent
     Model depth: 5
     """
-    type_: str = Field(default="DecontextualizedContent", alias='@type', const=True)
-    
+
+    type_: str = Field(default="DecontextualizedContent", alias="@type", const=True)

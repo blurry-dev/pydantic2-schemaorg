@@ -11,5 +11,5 @@ class UKNonprofitType(NonprofitType):
     See: https://schema.org/UKNonprofitType
     Model depth: 5
     """
-    type_: str = Field(default="UKNonprofitType", alias='@type', const=True)
-    
+
+    type_: str = Field(default="UKNonprofitType", alias="@type", const=True)

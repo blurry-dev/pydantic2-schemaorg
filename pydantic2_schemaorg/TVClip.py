@@ -14,12 +14,15 @@ class TVClip(Clip):
     See: https://schema.org/TVClip
     Model depth: 4
     """
-    type_: str = Field(default="TVClip", alias='@type', const=True)
-    partOfTVSeries: Optional[Union[List[Union['TVSeries', str]], 'TVSeries', str]] = Field(
-        default=None,
-        description="The TV series to which this episode or season belongs.",
+
+    type_: str = Field(default="TVClip", alias="@type", const=True)
+    partOfTVSeries: Optional[Union[List[Union["TVSeries", str]], "TVSeries", str]] = (
+        Field(
+            default=None,
+            description="The TV series to which this episode or season belongs.",
+        )
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.TVSeries import TVSeries

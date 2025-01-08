@@ -18,24 +18,52 @@ class DatedMoneySpecification(StructuredValue):
     See: https://schema.org/DatedMoneySpecification
     Model depth: 4
     """
-    type_: str = Field(default="DatedMoneySpecification", alias='@type', const=True)
-    endDate: Optional[Union[List[Union[datetime, 'DateTime', date, 'Date', str]], datetime, 'DateTime', date, 'Date', str]] = Field(
+
+    type_: str = Field(default="DatedMoneySpecification", alias="@type", const=True)
+    endDate: Optional[
+        Union[
+            List[Union[datetime, "DateTime", date, "Date", str]],
+            datetime,
+            "DateTime",
+            date,
+            "Date",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
     )
-    currency: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    currency: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
-        description="The currency in which the monetary amount is expressed. Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. \"BTC\"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. \"Ithaca HOUR\".",
+        description='The currency in which the monetary amount is expressed. Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".',
     )
-    amount: Optional[Union[List[Union[StrictInt, StrictFloat, 'Number', 'MonetaryAmount', str]], StrictInt, StrictFloat, 'Number', 'MonetaryAmount', str]] = Field(
+    amount: Optional[
+        Union[
+            List[Union[StrictInt, StrictFloat, "Number", "MonetaryAmount", str]],
+            StrictInt,
+            StrictFloat,
+            "Number",
+            "MonetaryAmount",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The amount of money.",
     )
-    startDate: Optional[Union[List[Union[datetime, 'DateTime', date, 'Date', str]], datetime, 'DateTime', date, 'Date', str]] = Field(
+    startDate: Optional[
+        Union[
+            List[Union[datetime, "DateTime", date, "Date", str]],
+            datetime,
+            "DateTime",
+            date,
+            "Date",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.DateTime import DateTime

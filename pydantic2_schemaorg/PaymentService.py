@@ -12,5 +12,5 @@ class PaymentService(FinancialProduct, PaymentMethod):
     See: https://schema.org/PaymentService
     Model depth: 4
     """
-    type_: str = Field(default="PaymentService", alias='@type', const=True)
-    
+
+    type_: str = Field(default="PaymentService", alias="@type", const=True)

@@ -12,5 +12,5 @@ class UserBlocks(UserInteraction):
     See: https://schema.org/UserBlocks
     Model depth: 4
     """
-    type_: str = Field(default="UserBlocks", alias='@type', const=True)
-    
+
+    type_: str = Field(default="UserBlocks", alias="@type", const=True)

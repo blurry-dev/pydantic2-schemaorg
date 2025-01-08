@@ -14,20 +14,23 @@ class Joint(AnatomicalStructure):
     See: https://schema.org/Joint
     Model depth: 4
     """
-    type_: str = Field(default="Joint", alias='@type', const=True)
-    structuralClass: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+
+    type_: str = Field(default="Joint", alias="@type", const=True)
+    structuralClass: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="The name given to how bone physically connects to each other.",
     )
-    biomechnicalClass: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    biomechnicalClass: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="The biomechanical properties of the bone.",
     )
-    functionalClass: Optional[Union[List[Union[str, 'Text', 'MedicalEntity']], str, 'Text', 'MedicalEntity']] = Field(
+    functionalClass: Optional[
+        Union[List[Union[str, "Text", "MedicalEntity"]], str, "Text", "MedicalEntity"]
+    ] = Field(
         default=None,
         description="The degree of mobility the joint allows.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Text import Text

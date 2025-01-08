@@ -11,5 +11,7 @@ class CertificationStatusEnumeration(Enumeration):
     See: https://schema.org/CertificationStatusEnumeration
     Model depth: 4
     """
-    type_: str = Field(default="CertificationStatusEnumeration", alias='@type', const=True)
-    
+
+    type_: str = Field(
+        default="CertificationStatusEnumeration", alias="@type", const=True
+    )

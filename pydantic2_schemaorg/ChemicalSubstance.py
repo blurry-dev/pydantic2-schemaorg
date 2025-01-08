@@ -15,20 +15,25 @@ class ChemicalSubstance(BioChemEntity):
     See: https://schema.org/ChemicalSubstance
     Model depth: 3
     """
-    type_: str = Field(default="ChemicalSubstance", alias='@type', const=True)
-    chemicalRole: Optional[Union[List[Union['DefinedTerm', str]], 'DefinedTerm', str]] = Field(
+
+    type_: str = Field(default="ChemicalSubstance", alias="@type", const=True)
+    chemicalRole: Optional[
+        Union[List[Union["DefinedTerm", str]], "DefinedTerm", str]
+    ] = Field(
         default=None,
         description="A role played by the BioChemEntity within a chemical context.",
     )
-    potentialUse: Optional[Union[List[Union['DefinedTerm', str]], 'DefinedTerm', str]] = Field(
+    potentialUse: Optional[
+        Union[List[Union["DefinedTerm", str]], "DefinedTerm", str]
+    ] = Field(
         default=None,
         description="Intended use of the BioChemEntity by humans.",
     )
-    chemicalComposition: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    chemicalComposition: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.DefinedTerm import DefinedTerm

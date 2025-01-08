@@ -2,7 +2,9 @@ from __future__ import annotations
 
 
 from pydantic.v1 import Field
-from pydantic2_schemaorg.IPTCDigitalSourceEnumeration import IPTCDigitalSourceEnumeration
+from pydantic2_schemaorg.IPTCDigitalSourceEnumeration import (
+    IPTCDigitalSourceEnumeration,
+)
 
 
 class DigitalCaptureDigitalSource(IPTCDigitalSourceEnumeration):
@@ -13,5 +15,5 @@ class DigitalCaptureDigitalSource(IPTCDigitalSourceEnumeration):
     See: https://schema.org/DigitalCaptureDigitalSource
     Model depth: 6
     """
-    type_: str = Field(default="DigitalCaptureDigitalSource", alias='@type', const=True)
-    
+
+    type_: str = Field(default="DigitalCaptureDigitalSource", alias="@type", const=True)

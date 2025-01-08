@@ -16,12 +16,15 @@ class SportsOrganization(Organization):
     See: https://schema.org/SportsOrganization
     Model depth: 3
     """
-    type_: str = Field(default="SportsOrganization", alias='@type', const=True)
-    sport: Optional[Union[List[Union[AnyUrl, 'URL', str, 'Text']], AnyUrl, 'URL', str, 'Text']] = Field(
+
+    type_: str = Field(default="SportsOrganization", alias="@type", const=True)
+    sport: Optional[
+        Union[List[Union[AnyUrl, "URL", str, "Text"]], AnyUrl, "URL", str, "Text"]
+    ] = Field(
         default=None,
         description="A type of sport (e.g. Baseball).",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.URL import URL

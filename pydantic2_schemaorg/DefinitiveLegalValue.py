@@ -12,5 +12,5 @@ class DefinitiveLegalValue(LegalValueLevel):
     See: https://schema.org/DefinitiveLegalValue
     Model depth: 5
     """
-    type_: str = Field(default="DefinitiveLegalValue", alias='@type', const=True)
-    
+
+    type_: str = Field(default="DefinitiveLegalValue", alias="@type", const=True)

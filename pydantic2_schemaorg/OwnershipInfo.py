@@ -15,24 +15,33 @@ class OwnershipInfo(StructuredValue):
     See: https://schema.org/OwnershipInfo
     Model depth: 4
     """
-    type_: str = Field(default="OwnershipInfo", alias='@type', const=True)
-    acquiredFrom: Optional[Union[List[Union['Person', 'Organization', str]], 'Person', 'Organization', str]] = Field(
+
+    type_: str = Field(default="OwnershipInfo", alias="@type", const=True)
+    acquiredFrom: Optional[
+        Union[List[Union["Person", "Organization", str]], "Person", "Organization", str]
+    ] = Field(
         default=None,
         description="The organization or person from which the product was acquired.",
     )
-    ownedThrough: Optional[Union[List[Union[datetime, 'DateTime', str]], datetime, 'DateTime', str]] = Field(
+    ownedThrough: Optional[
+        Union[List[Union[datetime, "DateTime", str]], datetime, "DateTime", str]
+    ] = Field(
         default=None,
         description="The date and time of giving up ownership on the product.",
     )
-    ownedFrom: Optional[Union[List[Union[datetime, 'DateTime', str]], datetime, 'DateTime', str]] = Field(
+    ownedFrom: Optional[
+        Union[List[Union[datetime, "DateTime", str]], datetime, "DateTime", str]
+    ] = Field(
         default=None,
         description="The date and time of obtaining the product.",
     )
-    typeOfGood: Optional[Union[List[Union['Service', 'Product', str]], 'Service', 'Product', str]] = Field(
+    typeOfGood: Optional[
+        Union[List[Union["Service", "Product", str]], "Service", "Product", str]
+    ] = Field(
         default=None,
         description="The product that this structured value is referring to.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Person import Person

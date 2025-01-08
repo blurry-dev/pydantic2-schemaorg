@@ -11,5 +11,5 @@ class PhoneCarrierPayment(PaymentMethodType):
     See: https://schema.org/PhoneCarrierPayment
     Model depth: 5
     """
-    type_: str = Field(default="PhoneCarrierPayment", alias='@type', const=True)
-    
+
+    type_: str = Field(default="PhoneCarrierPayment", alias="@type", const=True)

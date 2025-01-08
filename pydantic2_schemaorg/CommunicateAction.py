@@ -15,24 +15,36 @@ class CommunicateAction(InteractAction):
     See: https://schema.org/CommunicateAction
     Model depth: 4
     """
-    type_: str = Field(default="CommunicateAction", alias='@type', const=True)
-    recipient: Optional[Union[List[Union['Organization', 'Audience', 'Person', 'ContactPoint', str]], 'Organization', 'Audience', 'Person', 'ContactPoint', str]] = Field(
+
+    type_: str = Field(default="CommunicateAction", alias="@type", const=True)
+    recipient: Optional[
+        Union[
+            List[Union["Organization", "Audience", "Person", "ContactPoint", str]],
+            "Organization",
+            "Audience",
+            "Person",
+            "ContactPoint",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="A sub property of participant. The participant who is at the receiving end of the action.",
     )
-    inLanguage: Optional[Union[List[Union[str, 'Text', 'Language']], str, 'Text', 'Language']] = Field(
+    inLanguage: Optional[
+        Union[List[Union[str, "Text", "Language"]], str, "Text", "Language"]
+    ] = Field(
         default=None,
         description="The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
     )
-    about: Optional[Union[List[Union['Thing', str]], 'Thing', str]] = Field(
+    about: Optional[Union[List[Union["Thing", str]], "Thing", str]] = Field(
         default=None,
         description="The subject matter of the content.",
     )
-    language: Optional[Union[List[Union['Language', str]], 'Language', str]] = Field(
+    language: Optional[Union[List[Union["Language", str]], "Language", str]] = Field(
         default=None,
         description="A sub property of instrument. The language used on this action.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Organization import Organization
