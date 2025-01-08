@@ -11,5 +11,5 @@ class PoliticalParty(Organization):
     See: https://schema.org/PoliticalParty
     Model depth: 3
     """
-    type_: str = Field(default="PoliticalParty", alias='@type', const=True)
-    
+
+    type_: str = Field(default="PoliticalParty", alias="@type", const=True)

@@ -15,12 +15,15 @@ class MedicalSignOrSymptom(MedicalCondition):
     See: https://schema.org/MedicalSignOrSymptom
     Model depth: 4
     """
-    type_: str = Field(default="MedicalSignOrSymptom", alias='@type', const=True)
-    possibleTreatment: Optional[Union[List[Union['MedicalTherapy', str]], 'MedicalTherapy', str]] = Field(
+
+    type_: str = Field(default="MedicalSignOrSymptom", alias="@type", const=True)
+    possibleTreatment: Optional[
+        Union[List[Union["MedicalTherapy", str]], "MedicalTherapy", str]
+    ] = Field(
         default=None,
         description="A possible treatment to address this condition, sign or symptom.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.MedicalTherapy import MedicalTherapy

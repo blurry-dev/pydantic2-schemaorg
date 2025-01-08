@@ -2,7 +2,9 @@ from __future__ import annotations
 
 
 from pydantic.v1 import Field
-from pydantic2_schemaorg.MediaManipulationRatingEnumeration import MediaManipulationRatingEnumeration
+from pydantic2_schemaorg.MediaManipulationRatingEnumeration import (
+    MediaManipulationRatingEnumeration,
+)
 
 
 class StagedContent(MediaManipulationRatingEnumeration):
@@ -16,5 +18,5 @@ class StagedContent(MediaManipulationRatingEnumeration):
     See: https://schema.org/StagedContent
     Model depth: 5
     """
-    type_: str = Field(default="StagedContent", alias='@type', const=True)
-    
+
+    type_: str = Field(default="StagedContent", alias="@type", const=True)

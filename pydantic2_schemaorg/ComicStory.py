@@ -15,28 +15,29 @@ class ComicStory(CreativeWork):
     See: https://schema.org/ComicStory
     Model depth: 3
     """
-    type_: str = Field(default="ComicStory", alias='@type', const=True)
-    artist: Optional[Union[List[Union['Person', str]], 'Person', str]] = Field(
+
+    type_: str = Field(default="ComicStory", alias="@type", const=True)
+    artist: Optional[Union[List[Union["Person", str]], "Person", str]] = Field(
         default=None,
         description="The primary artist for a work in a medium other than pencils or digital line art--for example, if the primary artwork is done in watercolors or digital paints.",
     )
-    inker: Optional[Union[List[Union['Person', str]], 'Person', str]] = Field(
+    inker: Optional[Union[List[Union["Person", str]], "Person", str]] = Field(
         default=None,
         description="The individual who traces over the pencil drawings in ink after pencils are complete.",
     )
-    letterer: Optional[Union[List[Union['Person', str]], 'Person', str]] = Field(
+    letterer: Optional[Union[List[Union["Person", str]], "Person", str]] = Field(
         default=None,
         description="The individual who adds lettering, including speech balloons and sound effects, to artwork.",
     )
-    colorist: Optional[Union[List[Union['Person', str]], 'Person', str]] = Field(
+    colorist: Optional[Union[List[Union["Person", str]], "Person", str]] = Field(
         default=None,
         description="The individual who adds color to inked drawings.",
     )
-    penciler: Optional[Union[List[Union['Person', str]], 'Person', str]] = Field(
+    penciler: Optional[Union[List[Union["Person", str]], "Person", str]] = Field(
         default=None,
         description="The individual who draws the primary narrative artwork.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Person import Person

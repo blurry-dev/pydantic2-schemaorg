@@ -14,12 +14,13 @@ class Corporation(Organization):
     See: https://schema.org/Corporation
     Model depth: 3
     """
-    type_: str = Field(default="Corporation", alias='@type', const=True)
-    tickerSymbol: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+
+    type_: str = Field(default="Corporation", alias="@type", const=True)
+    tickerSymbol: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="The exchange traded instrument associated with a Corporation object. The tickerSymbol is expressed as an exchange and an instrument name separated by a space character. For the exchange component of the tickerSymbol attribute, we recommend using the controlled vocabulary of Market Identifier Codes (MIC) specified in ISO 15022.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Text import Text

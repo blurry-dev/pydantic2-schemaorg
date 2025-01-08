@@ -17,16 +17,29 @@ class GeoCircle(GeoShape):
     See: https://schema.org/GeoCircle
     Model depth: 5
     """
-    type_: str = Field(default="GeoCircle", alias='@type', const=True)
-    geoMidpoint: Optional[Union[List[Union['GeoCoordinates', str]], 'GeoCoordinates', str]] = Field(
+
+    type_: str = Field(default="GeoCircle", alias="@type", const=True)
+    geoMidpoint: Optional[
+        Union[List[Union["GeoCoordinates", str]], "GeoCoordinates", str]
+    ] = Field(
         default=None,
         description="Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.",
     )
-    geoRadius: Optional[Union[List[Union[StrictInt, StrictFloat, 'Number', str, 'Text', 'Distance']], StrictInt, StrictFloat, 'Number', str, 'Text', 'Distance']] = Field(
+    geoRadius: Optional[
+        Union[
+            List[Union[StrictInt, StrictFloat, "Number", str, "Text", "Distance"]],
+            StrictInt,
+            StrictFloat,
+            "Number",
+            str,
+            "Text",
+            "Distance",
+        ]
+    ] = Field(
         default=None,
         description="Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.GeoCoordinates import GeoCoordinates

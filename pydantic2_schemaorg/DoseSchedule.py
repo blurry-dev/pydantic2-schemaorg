@@ -15,24 +15,34 @@ class DoseSchedule(MedicalIntangible):
     See: https://schema.org/DoseSchedule
     Model depth: 4
     """
-    type_: str = Field(default="DoseSchedule", alias='@type', const=True)
-    doseUnit: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+
+    type_: str = Field(default="DoseSchedule", alias="@type", const=True)
+    doseUnit: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="The unit of the dose, e.g. 'mg'.",
     )
-    frequency: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    frequency: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="How often the dose is taken, e.g. 'daily'.",
     )
-    doseValue: Optional[Union[List[Union[StrictInt, StrictFloat, 'Number', 'QualitativeValue', str]], StrictInt, StrictFloat, 'Number', 'QualitativeValue', str]] = Field(
+    doseValue: Optional[
+        Union[
+            List[Union[StrictInt, StrictFloat, "Number", "QualitativeValue", str]],
+            StrictInt,
+            StrictFloat,
+            "Number",
+            "QualitativeValue",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The value of the dose, e.g. 500.",
     )
-    targetPopulation: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    targetPopulation: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Text import Text

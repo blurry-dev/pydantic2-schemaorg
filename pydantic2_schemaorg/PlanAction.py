@@ -15,12 +15,22 @@ class PlanAction(OrganizeAction):
     See: https://schema.org/PlanAction
     Model depth: 4
     """
-    type_: str = Field(default="PlanAction", alias='@type', const=True)
-    scheduledTime: Optional[Union[List[Union[datetime, 'DateTime', date, 'Date', str]], datetime, 'DateTime', date, 'Date', str]] = Field(
+
+    type_: str = Field(default="PlanAction", alias="@type", const=True)
+    scheduledTime: Optional[
+        Union[
+            List[Union[datetime, "DateTime", date, "Date", str]],
+            datetime,
+            "DateTime",
+            date,
+            "Date",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The time the object is scheduled to.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.DateTime import DateTime

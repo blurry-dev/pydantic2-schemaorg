@@ -13,5 +13,5 @@ class EventRescheduled(EventStatusType):
     See: https://schema.org/EventRescheduled
     Model depth: 6
     """
-    type_: str = Field(default="EventRescheduled", alias='@type', const=True)
-    
+
+    type_: str = Field(default="EventRescheduled", alias="@type", const=True)

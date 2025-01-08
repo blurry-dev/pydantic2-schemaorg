@@ -11,5 +11,5 @@ class Head(PhysicalExam):
     See: https://schema.org/Head
     Model depth: 5
     """
-    type_: str = Field(default="Head", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Head", alias="@type", const=True)

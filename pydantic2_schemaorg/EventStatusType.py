@@ -11,5 +11,5 @@ class EventStatusType(StatusEnumeration):
     See: https://schema.org/EventStatusType
     Model depth: 5
     """
-    type_: str = Field(default="EventStatusType", alias='@type', const=True)
-    
+
+    type_: str = Field(default="EventStatusType", alias="@type", const=True)

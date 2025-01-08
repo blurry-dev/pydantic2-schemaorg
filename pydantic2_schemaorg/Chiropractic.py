@@ -11,5 +11,5 @@ class Chiropractic(MedicineSystem):
     See: https://schema.org/Chiropractic
     Model depth: 6
     """
-    type_: str = Field(default="Chiropractic", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Chiropractic", alias="@type", const=True)

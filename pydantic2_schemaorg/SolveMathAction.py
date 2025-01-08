@@ -15,12 +15,13 @@ class SolveMathAction(Action):
     See: https://schema.org/SolveMathAction
     Model depth: 3
     """
-    type_: str = Field(default="SolveMathAction", alias='@type', const=True)
-    eduQuestionType: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+
+    type_: str = Field(default="SolveMathAction", alias="@type", const=True)
+    eduQuestionType: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
-        description="For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: \"Multiple choice\", \"Open ended\", \"Flashcard\".",
+        description='For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".',
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Text import Text

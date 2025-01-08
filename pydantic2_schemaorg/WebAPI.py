@@ -15,12 +15,21 @@ class WebAPI(Service):
     See: https://schema.org/WebAPI
     Model depth: 4
     """
-    type_: str = Field(default="WebAPI", alias='@type', const=True)
-    documentation: Optional[Union[List[Union[AnyUrl, 'URL', 'CreativeWork', str]], AnyUrl, 'URL', 'CreativeWork', str]] = Field(
+
+    type_: str = Field(default="WebAPI", alias="@type", const=True)
+    documentation: Optional[
+        Union[
+            List[Union[AnyUrl, "URL", "CreativeWork", str]],
+            AnyUrl,
+            "URL",
+            "CreativeWork",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="Further documentation describing the Web API in more detail.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.URL import URL

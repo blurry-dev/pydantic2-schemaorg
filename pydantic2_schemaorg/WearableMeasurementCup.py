@@ -2,7 +2,9 @@ from __future__ import annotations
 
 
 from pydantic.v1 import Field
-from pydantic2_schemaorg.WearableMeasurementTypeEnumeration import WearableMeasurementTypeEnumeration
+from pydantic2_schemaorg.WearableMeasurementTypeEnumeration import (
+    WearableMeasurementTypeEnumeration,
+)
 
 
 class WearableMeasurementCup(WearableMeasurementTypeEnumeration):
@@ -11,5 +13,5 @@ class WearableMeasurementCup(WearableMeasurementTypeEnumeration):
     See: https://schema.org/WearableMeasurementCup
     Model depth: 6
     """
-    type_: str = Field(default="WearableMeasurementCup", alias='@type', const=True)
-    
+
+    type_: str = Field(default="WearableMeasurementCup", alias="@type", const=True)

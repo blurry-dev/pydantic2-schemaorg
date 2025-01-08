@@ -11,5 +11,5 @@ class MadeToOrder(ItemAvailability):
     See: https://schema.org/MadeToOrder
     Model depth: 5
     """
-    type_: str = Field(default="MadeToOrder", alias='@type', const=True)
-    
+
+    type_: str = Field(default="MadeToOrder", alias="@type", const=True)

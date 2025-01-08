@@ -15,12 +15,13 @@ class ReviewAction(AssessAction):
     See: https://schema.org/ReviewAction
     Model depth: 4
     """
-    type_: str = Field(default="ReviewAction", alias='@type', const=True)
-    resultReview: Optional[Union[List[Union['Review', str]], 'Review', str]] = Field(
+
+    type_: str = Field(default="ReviewAction", alias="@type", const=True)
+    resultReview: Optional[Union[List[Union["Review", str]], "Review", str]] = Field(
         default=None,
         description="A sub property of result. The review that resulted in the performing of the action.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Review import Review

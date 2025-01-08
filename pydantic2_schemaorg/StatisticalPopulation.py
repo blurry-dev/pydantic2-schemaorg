@@ -24,12 +24,13 @@ class StatisticalPopulation(Intangible):
     See: https://schema.org/StatisticalPopulation
     Model depth: 3
     """
-    type_: str = Field(default="StatisticalPopulation", alias='@type', const=True)
-    populationType: Optional[Union[List[Union['Class', str]], 'Class', str]] = Field(
+
+    type_: str = Field(default="StatisticalPopulation", alias="@type", const=True)
+    populationType: Optional[Union[List[Union["Class", str]], "Class", str]] = Field(
         default=None,
         description="Indicates the populationType common to all members of a [[StatisticalPopulation]] or all cases within the scope of a [[StatisticalVariable]].",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Class import Class

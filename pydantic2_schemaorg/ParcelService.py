@@ -12,5 +12,5 @@ class ParcelService(DeliveryMethod):
     See: https://schema.org/ParcelService
     Model depth: 5
     """
-    type_: str = Field(default="ParcelService", alias='@type', const=True)
-    
+
+    type_: str = Field(default="ParcelService", alias="@type", const=True)

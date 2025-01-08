@@ -11,5 +11,5 @@ class OnlineFull(GameServerStatus):
     See: https://schema.org/OnlineFull
     Model depth: 6
     """
-    type_: str = Field(default="OnlineFull", alias='@type', const=True)
-    
+
+    type_: str = Field(default="OnlineFull", alias="@type", const=True)

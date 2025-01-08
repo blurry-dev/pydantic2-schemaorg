@@ -14,5 +14,5 @@ class HowToStep(ListItem, ItemList, CreativeWork):
     See: https://schema.org/HowToStep
     Model depth: 3
     """
-    type_: str = Field(default="HowToStep", alias='@type', const=True)
-    
+
+    type_: str = Field(default="HowToStep", alias="@type", const=True)

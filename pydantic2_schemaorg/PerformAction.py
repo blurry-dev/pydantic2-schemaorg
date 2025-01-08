@@ -14,12 +14,15 @@ class PerformAction(PlayAction):
     See: https://schema.org/PerformAction
     Model depth: 4
     """
-    type_: str = Field(default="PerformAction", alias='@type', const=True)
-    entertainmentBusiness: Optional[Union[List[Union['EntertainmentBusiness', str]], 'EntertainmentBusiness', str]] = Field(
+
+    type_: str = Field(default="PerformAction", alias="@type", const=True)
+    entertainmentBusiness: Optional[
+        Union[List[Union["EntertainmentBusiness", str]], "EntertainmentBusiness", str]
+    ] = Field(
         default=None,
         description="A sub property of location. The entertainment business where the action occurred.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.EntertainmentBusiness import EntertainmentBusiness

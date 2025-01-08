@@ -2,7 +2,9 @@ from __future__ import annotations
 
 
 from pydantic.v1 import Field
-from pydantic2_schemaorg.ReturnLabelSourceEnumeration import ReturnLabelSourceEnumeration
+from pydantic2_schemaorg.ReturnLabelSourceEnumeration import (
+    ReturnLabelSourceEnumeration,
+)
 
 
 class ReturnLabelInBox(ReturnLabelSourceEnumeration):
@@ -11,5 +13,5 @@ class ReturnLabelInBox(ReturnLabelSourceEnumeration):
     See: https://schema.org/ReturnLabelInBox
     Model depth: 5
     """
-    type_: str = Field(default="ReturnLabelInBox", alias='@type', const=True)
-    
+
+    type_: str = Field(default="ReturnLabelInBox", alias="@type", const=True)

@@ -14,16 +14,21 @@ class PaymentChargeSpecification(PriceSpecification):
     See: https://schema.org/PaymentChargeSpecification
     Model depth: 5
     """
-    type_: str = Field(default="PaymentChargeSpecification", alias='@type', const=True)
-    appliesToPaymentMethod: Optional[Union[List[Union['PaymentMethod', str]], 'PaymentMethod', str]] = Field(
+
+    type_: str = Field(default="PaymentChargeSpecification", alias="@type", const=True)
+    appliesToPaymentMethod: Optional[
+        Union[List[Union["PaymentMethod", str]], "PaymentMethod", str]
+    ] = Field(
         default=None,
         description="The payment method(s) to which the payment charge specification applies.",
     )
-    appliesToDeliveryMethod: Optional[Union[List[Union['DeliveryMethod', str]], 'DeliveryMethod', str]] = Field(
+    appliesToDeliveryMethod: Optional[
+        Union[List[Union["DeliveryMethod", str]], "DeliveryMethod", str]
+    ] = Field(
         default=None,
         description="The delivery method(s) to which the delivery charge or payment charge specification applies.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.PaymentMethod import PaymentMethod

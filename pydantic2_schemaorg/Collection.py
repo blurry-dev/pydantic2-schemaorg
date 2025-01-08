@@ -14,12 +14,15 @@ class Collection(CreativeWork):
     See: https://schema.org/Collection
     Model depth: 3
     """
-    type_: str = Field(default="Collection", alias='@type', const=True)
-    collectionSize: Optional[Union[List[Union[int, 'Integer', str]], int, 'Integer', str]] = Field(
+
+    type_: str = Field(default="Collection", alias="@type", const=True)
+    collectionSize: Optional[
+        Union[List[Union[int, "Integer", str]], int, "Integer", str]
+    ] = Field(
         default=None,
         description="The number of items in the [[Collection]].",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Integer import Integer

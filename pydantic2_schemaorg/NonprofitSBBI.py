@@ -11,5 +11,5 @@ class NonprofitSBBI(NLNonprofitType):
     See: https://schema.org/NonprofitSBBI
     Model depth: 6
     """
-    type_: str = Field(default="NonprofitSBBI", alias='@type', const=True)
-    
+
+    type_: str = Field(default="NonprofitSBBI", alias="@type", const=True)

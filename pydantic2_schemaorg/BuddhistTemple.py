@@ -11,5 +11,5 @@ class BuddhistTemple(PlaceOfWorship):
     See: https://schema.org/BuddhistTemple
     Model depth: 5
     """
-    type_: str = Field(default="BuddhistTemple", alias='@type', const=True)
-    
+
+    type_: str = Field(default="BuddhistTemple", alias="@type", const=True)

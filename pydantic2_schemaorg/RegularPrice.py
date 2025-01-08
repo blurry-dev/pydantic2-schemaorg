@@ -12,5 +12,5 @@ class RegularPrice(PriceTypeEnumeration):
     See: https://schema.org/RegularPrice
     Model depth: 5
     """
-    type_: str = Field(default="RegularPrice", alias='@type', const=True)
-    
+
+    type_: str = Field(default="RegularPrice", alias="@type", const=True)

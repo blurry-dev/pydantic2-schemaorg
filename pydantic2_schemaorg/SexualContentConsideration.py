@@ -13,5 +13,5 @@ class SexualContentConsideration(AdultOrientedEnumeration):
     See: https://schema.org/SexualContentConsideration
     Model depth: 5
     """
-    type_: str = Field(default="SexualContentConsideration", alias='@type', const=True)
-    
+
+    type_: str = Field(default="SexualContentConsideration", alias="@type", const=True)

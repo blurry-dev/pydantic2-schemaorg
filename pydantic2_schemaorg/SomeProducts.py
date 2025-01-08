@@ -14,12 +14,15 @@ class SomeProducts(Product):
     See: https://schema.org/SomeProducts
     Model depth: 3
     """
-    type_: str = Field(default="SomeProducts", alias='@type', const=True)
-    inventoryLevel: Optional[Union[List[Union['QuantitativeValue', str]], 'QuantitativeValue', str]] = Field(
+
+    type_: str = Field(default="SomeProducts", alias="@type", const=True)
+    inventoryLevel: Optional[
+        Union[List[Union["QuantitativeValue", str]], "QuantitativeValue", str]
+    ] = Field(
         default=None,
         description="The current approximate inventory level for the item or items.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.QuantitativeValue import QuantitativeValue

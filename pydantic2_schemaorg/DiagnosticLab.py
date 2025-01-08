@@ -14,12 +14,15 @@ class DiagnosticLab(MedicalOrganization):
     See: https://schema.org/DiagnosticLab
     Model depth: 4
     """
-    type_: str = Field(default="DiagnosticLab", alias='@type', const=True)
-    availableTest: Optional[Union[List[Union['MedicalTest', str]], 'MedicalTest', str]] = Field(
+
+    type_: str = Field(default="DiagnosticLab", alias="@type", const=True)
+    availableTest: Optional[
+        Union[List[Union["MedicalTest", str]], "MedicalTest", str]
+    ] = Field(
         default=None,
         description="A diagnostic test or procedure offered by this lab.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.MedicalTest import MedicalTest

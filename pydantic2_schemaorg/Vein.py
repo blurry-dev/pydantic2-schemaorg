@@ -14,20 +14,30 @@ class Vein(Vessel):
     See: https://schema.org/Vein
     Model depth: 5
     """
-    type_: str = Field(default="Vein", alias='@type', const=True)
-    tributary: Optional[Union[List[Union['AnatomicalStructure', str]], 'AnatomicalStructure', str]] = Field(
+
+    type_: str = Field(default="Vein", alias="@type", const=True)
+    tributary: Optional[
+        Union[List[Union["AnatomicalStructure", str]], "AnatomicalStructure", str]
+    ] = Field(
         default=None,
         description="The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.",
     )
-    regionDrained: Optional[Union[List[Union['AnatomicalSystem', 'AnatomicalStructure', str]], 'AnatomicalSystem', 'AnatomicalStructure', str]] = Field(
+    regionDrained: Optional[
+        Union[
+            List[Union["AnatomicalSystem", "AnatomicalStructure", str]],
+            "AnatomicalSystem",
+            "AnatomicalStructure",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.",
     )
-    drainsTo: Optional[Union[List[Union['Vessel', str]], 'Vessel', str]] = Field(
+    drainsTo: Optional[Union[List[Union["Vessel", str]], "Vessel", str]] = Field(
         default=None,
         description="The vasculature that the vein drains into.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.AnatomicalStructure import AnatomicalStructure

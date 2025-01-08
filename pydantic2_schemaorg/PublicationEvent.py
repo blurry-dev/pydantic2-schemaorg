@@ -16,20 +16,27 @@ class PublicationEvent(Event):
     See: https://schema.org/PublicationEvent
     Model depth: 3
     """
-    type_: str = Field(default="PublicationEvent", alias='@type', const=True)
-    free: Optional[Union[List[Union[StrictBool, 'Boolean', str]], StrictBool, 'Boolean', str]] = Field(
+
+    type_: str = Field(default="PublicationEvent", alias="@type", const=True)
+    free: Optional[
+        Union[List[Union[StrictBool, "Boolean", str]], StrictBool, "Boolean", str]
+    ] = Field(
         default=None,
         description="A flag to signal that the item, event, or place is accessible for free.",
     )
-    publishedOn: Optional[Union[List[Union['BroadcastService', str]], 'BroadcastService', str]] = Field(
+    publishedOn: Optional[
+        Union[List[Union["BroadcastService", str]], "BroadcastService", str]
+    ] = Field(
         default=None,
         description="A broadcast service associated with the publication event.",
     )
-    publishedBy: Optional[Union[List[Union['Person', 'Organization', str]], 'Person', 'Organization', str]] = Field(
+    publishedBy: Optional[
+        Union[List[Union["Person", "Organization", str]], "Person", "Organization", str]
+    ] = Field(
         default=None,
         description="An agent associated with the publication event.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Boolean import Boolean

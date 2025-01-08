@@ -11,5 +11,5 @@ class OnlineOnly(ItemAvailability):
     See: https://schema.org/OnlineOnly
     Model depth: 5
     """
-    type_: str = Field(default="OnlineOnly", alias='@type', const=True)
-    
+
+    type_: str = Field(default="OnlineOnly", alias="@type", const=True)

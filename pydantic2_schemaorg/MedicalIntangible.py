@@ -11,5 +11,5 @@ class MedicalIntangible(MedicalEntity):
     See: https://schema.org/MedicalIntangible
     Model depth: 3
     """
-    type_: str = Field(default="MedicalIntangible", alias='@type', const=True)
-    
+
+    type_: str = Field(default="MedicalIntangible", alias="@type", const=True)

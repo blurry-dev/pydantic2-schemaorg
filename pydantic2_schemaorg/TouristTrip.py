@@ -16,12 +16,15 @@ class TouristTrip(Trip):
     See: https://schema.org/TouristTrip
     Model depth: 4
     """
-    type_: str = Field(default="TouristTrip", alias='@type', const=True)
-    touristType: Optional[Union[List[Union[str, 'Text', 'Audience']], str, 'Text', 'Audience']] = Field(
+
+    type_: str = Field(default="TouristTrip", alias="@type", const=True)
+    touristType: Optional[
+        Union[List[Union[str, "Text", "Audience"]], str, "Text", "Audience"]
+    ] = Field(
         default=None,
         description="Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Text import Text

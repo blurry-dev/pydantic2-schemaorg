@@ -19,48 +19,97 @@ class Course(LearningResource, CreativeWork):
     See: https://schema.org/Course
     Model depth: 3
     """
-    type_: str = Field(default="Course", alias='@type', const=True)
-    syllabusSections: Optional[Union[List[Union['Syllabus', str]], 'Syllabus', str]] = Field(
-        default=None,
-        description="Indicates (typically several) Syllabus entities that lay out what each section of the overall course will cover.",
+
+    type_: str = Field(default="Course", alias="@type", const=True)
+    syllabusSections: Optional[Union[List[Union["Syllabus", str]], "Syllabus", str]] = (
+        Field(
+            default=None,
+            description="Indicates (typically several) Syllabus entities that lay out what each section of the overall course will cover.",
+        )
     )
-    numberOfCredits: Optional[Union[List[Union[int, 'Integer', 'StructuredValue', str]], int, 'Integer', 'StructuredValue', str]] = Field(
+    numberOfCredits: Optional[
+        Union[
+            List[Union[int, "Integer", "StructuredValue", str]],
+            int,
+            "Integer",
+            "StructuredValue",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.",
     )
-    availableLanguage: Optional[Union[List[Union[str, 'Text', 'Language']], str, 'Text', 'Language']] = Field(
+    availableLanguage: Optional[
+        Union[List[Union[str, "Text", "Language"]], str, "Text", "Language"]
+    ] = Field(
         default=None,
         description="A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].",
     )
-    coursePrerequisites: Optional[Union[List[Union[str, 'Text', 'Course', 'AlignmentObject']], str, 'Text', 'Course', 'AlignmentObject']] = Field(
+    coursePrerequisites: Optional[
+        Union[
+            List[Union[str, "Text", "Course", "AlignmentObject"]],
+            str,
+            "Text",
+            "Course",
+            "AlignmentObject",
+        ]
+    ] = Field(
         default=None,
-        description="Requirements for taking the Course. May be completion of another [[Course]] or a textual description like \"permission of instructor\". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].",
+        description='Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].',
     )
-    courseCode: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    courseCode: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="The identifier for the [[Course]] used by the course [[provider]] (e.g. CS101 or 6.001).",
     )
-    financialAidEligible: Optional[Union[List[Union[str, 'Text', 'DefinedTerm']], str, 'Text', 'DefinedTerm']] = Field(
+    financialAidEligible: Optional[
+        Union[List[Union[str, "Text", "DefinedTerm"]], str, "Text", "DefinedTerm"]
+    ] = Field(
         default=None,
         description="A financial aid type or program which students may use to pay for tuition or fees associated with the program.",
     )
-    hasCourseInstance: Optional[Union[List[Union['CourseInstance', str]], 'CourseInstance', str]] = Field(
+    hasCourseInstance: Optional[
+        Union[List[Union["CourseInstance", str]], "CourseInstance", str]
+    ] = Field(
         default=None,
         description="An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.",
     )
-    occupationalCredentialAwarded: Optional[Union[List[Union[AnyUrl, 'URL', str, 'Text', 'EducationalOccupationalCredential']], AnyUrl, 'URL', str, 'Text', 'EducationalOccupationalCredential']] = Field(
+    occupationalCredentialAwarded: Optional[
+        Union[
+            List[
+                Union[AnyUrl, "URL", str, "Text", "EducationalOccupationalCredential"]
+            ],
+            AnyUrl,
+            "URL",
+            str,
+            "Text",
+            "EducationalOccupationalCredential",
+        ]
+    ] = Field(
         default=None,
         description="A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.",
     )
-    totalHistoricalEnrollment: Optional[Union[List[Union[int, 'Integer', str]], int, 'Integer', str]] = Field(
+    totalHistoricalEnrollment: Optional[
+        Union[List[Union[int, "Integer", str]], int, "Integer", str]
+    ] = Field(
         default=None,
         description="The total number of students that have enrolled in the history of the course.",
     )
-    educationalCredentialAwarded: Optional[Union[List[Union[AnyUrl, 'URL', str, 'Text', 'EducationalOccupationalCredential']], AnyUrl, 'URL', str, 'Text', 'EducationalOccupationalCredential']] = Field(
+    educationalCredentialAwarded: Optional[
+        Union[
+            List[
+                Union[AnyUrl, "URL", str, "Text", "EducationalOccupationalCredential"]
+            ],
+            AnyUrl,
+            "URL",
+            str,
+            "Text",
+            "EducationalOccupationalCredential",
+        ]
+    ] = Field(
         default=None,
         description="A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Syllabus import Syllabus
@@ -72,4 +121,6 @@ if TYPE_CHECKING:
     from pydantic2_schemaorg.DefinedTerm import DefinedTerm
     from pydantic2_schemaorg.CourseInstance import CourseInstance
     from pydantic2_schemaorg.URL import URL
-    from pydantic2_schemaorg.EducationalOccupationalCredential import EducationalOccupationalCredential
+    from pydantic2_schemaorg.EducationalOccupationalCredential import (
+        EducationalOccupationalCredential,
+    )

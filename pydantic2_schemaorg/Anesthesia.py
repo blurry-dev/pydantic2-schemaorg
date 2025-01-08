@@ -11,5 +11,5 @@ class Anesthesia(MedicalSpecialty):
     See: https://schema.org/Anesthesia
     Model depth: 6
     """
-    type_: str = Field(default="Anesthesia", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Anesthesia", alias="@type", const=True)

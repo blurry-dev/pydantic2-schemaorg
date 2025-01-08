@@ -12,5 +12,5 @@ class QAPage(WebPage):
     See: https://schema.org/QAPage
     Model depth: 4
     """
-    type_: str = Field(default="QAPage", alias='@type', const=True)
-    
+
+    type_: str = Field(default="QAPage", alias="@type", const=True)

@@ -13,5 +13,5 @@ class OnlineBusiness(Organization):
     See: https://schema.org/OnlineBusiness
     Model depth: 3
     """
-    type_: str = Field(default="OnlineBusiness", alias='@type', const=True)
-    
+
+    type_: str = Field(default="OnlineBusiness", alias="@type", const=True)

@@ -14,5 +14,5 @@ class DigitalPlatformEnumeration(Enumeration):
     See: https://schema.org/DigitalPlatformEnumeration
     Model depth: 4
     """
-    type_: str = Field(default="DigitalPlatformEnumeration", alias='@type', const=True)
-    
+
+    type_: str = Field(default="DigitalPlatformEnumeration", alias="@type", const=True)

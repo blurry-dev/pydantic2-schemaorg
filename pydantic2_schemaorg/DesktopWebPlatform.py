@@ -11,5 +11,5 @@ class DesktopWebPlatform(DigitalPlatformEnumeration):
     See: https://schema.org/DesktopWebPlatform
     Model depth: 5
     """
-    type_: str = Field(default="DesktopWebPlatform", alias='@type', const=True)
-    
+
+    type_: str = Field(default="DesktopWebPlatform", alias="@type", const=True)

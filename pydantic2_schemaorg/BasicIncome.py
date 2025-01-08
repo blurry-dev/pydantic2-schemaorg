@@ -11,5 +11,5 @@ class BasicIncome(GovernmentBenefitsType):
     See: https://schema.org/BasicIncome
     Model depth: 5
     """
-    type_: str = Field(default="BasicIncome", alias='@type', const=True)
-    
+
+    type_: str = Field(default="BasicIncome", alias="@type", const=True)

@@ -14,5 +14,5 @@ class DayOfWeek(Enumeration):
     See: https://schema.org/DayOfWeek
     Model depth: 4
     """
-    type_: str = Field(default="DayOfWeek", alias='@type', const=True)
-    
+
+    type_: str = Field(default="DayOfWeek", alias="@type", const=True)

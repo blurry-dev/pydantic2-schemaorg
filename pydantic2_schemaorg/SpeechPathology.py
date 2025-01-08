@@ -12,5 +12,5 @@ class SpeechPathology(MedicalSpecialty):
     See: https://schema.org/SpeechPathology
     Model depth: 6
     """
-    type_: str = Field(default="SpeechPathology", alias='@type', const=True)
-    
+
+    type_: str = Field(default="SpeechPathology", alias="@type", const=True)

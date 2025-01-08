@@ -11,5 +11,5 @@ class EventPostponed(EventStatusType):
     See: https://schema.org/EventPostponed
     Model depth: 6
     """
-    type_: str = Field(default="EventPostponed", alias='@type', const=True)
-    
+
+    type_: str = Field(default="EventPostponed", alias="@type", const=True)

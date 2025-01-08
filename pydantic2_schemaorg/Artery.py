@@ -14,16 +14,21 @@ class Artery(Vessel):
     See: https://schema.org/Artery
     Model depth: 5
     """
-    type_: str = Field(default="Artery", alias='@type', const=True)
-    arterialBranch: Optional[Union[List[Union['AnatomicalStructure', str]], 'AnatomicalStructure', str]] = Field(
+
+    type_: str = Field(default="Artery", alias="@type", const=True)
+    arterialBranch: Optional[
+        Union[List[Union["AnatomicalStructure", str]], "AnatomicalStructure", str]
+    ] = Field(
         default=None,
         description="The branches that comprise the arterial structure.",
     )
-    supplyTo: Optional[Union[List[Union['AnatomicalStructure', str]], 'AnatomicalStructure', str]] = Field(
+    supplyTo: Optional[
+        Union[List[Union["AnatomicalStructure", str]], "AnatomicalStructure", str]
+    ] = Field(
         default=None,
         description="The area to which the artery supplies blood.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.AnatomicalStructure import AnatomicalStructure

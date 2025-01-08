@@ -12,5 +12,5 @@ class WeaponConsideration(AdultOrientedEnumeration):
     See: https://schema.org/WeaponConsideration
     Model depth: 5
     """
-    type_: str = Field(default="WeaponConsideration", alias='@type', const=True)
-    
+
+    type_: str = Field(default="WeaponConsideration", alias="@type", const=True)

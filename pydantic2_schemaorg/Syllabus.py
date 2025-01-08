@@ -12,5 +12,5 @@ class Syllabus(LearningResource):
     See: https://schema.org/Syllabus
     Model depth: 4
     """
-    type_: str = Field(default="Syllabus", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Syllabus", alias="@type", const=True)

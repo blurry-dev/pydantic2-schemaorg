@@ -11,5 +11,5 @@ class ListPrice(PriceTypeEnumeration):
     See: https://schema.org/ListPrice
     Model depth: 5
     """
-    type_: str = Field(default="ListPrice", alias='@type', const=True)
-    
+
+    type_: str = Field(default="ListPrice", alias="@type", const=True)

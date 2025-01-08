@@ -17,32 +17,33 @@ class ComicIssue(PublicationIssue):
     See: https://schema.org/ComicIssue
     Model depth: 4
     """
-    type_: str = Field(default="ComicIssue", alias='@type', const=True)
-    artist: Optional[Union[List[Union['Person', str]], 'Person', str]] = Field(
+
+    type_: str = Field(default="ComicIssue", alias="@type", const=True)
+    artist: Optional[Union[List[Union["Person", str]], "Person", str]] = Field(
         default=None,
         description="The primary artist for a work in a medium other than pencils or digital line art--for example, if the primary artwork is done in watercolors or digital paints.",
     )
-    inker: Optional[Union[List[Union['Person', str]], 'Person', str]] = Field(
+    inker: Optional[Union[List[Union["Person", str]], "Person", str]] = Field(
         default=None,
         description="The individual who traces over the pencil drawings in ink after pencils are complete.",
     )
-    letterer: Optional[Union[List[Union['Person', str]], 'Person', str]] = Field(
+    letterer: Optional[Union[List[Union["Person", str]], "Person", str]] = Field(
         default=None,
         description="The individual who adds lettering, including speech balloons and sound effects, to artwork.",
     )
-    variantCover: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    variantCover: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
-        description="A description of the variant cover for the issue, if the issue is a variant printing. For example, \"Bryan Hitch Variant Cover\" or \"2nd Printing Variant\".",
+        description='A description of the variant cover for the issue, if the issue is a variant printing. For example, "Bryan Hitch Variant Cover" or "2nd Printing Variant".',
     )
-    colorist: Optional[Union[List[Union['Person', str]], 'Person', str]] = Field(
+    colorist: Optional[Union[List[Union["Person", str]], "Person", str]] = Field(
         default=None,
         description="The individual who adds color to inked drawings.",
     )
-    penciler: Optional[Union[List[Union['Person', str]], 'Person', str]] = Field(
+    penciler: Optional[Union[List[Union["Person", str]], "Person", str]] = Field(
         default=None,
         description="The individual who draws the primary narrative artwork.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Person import Person

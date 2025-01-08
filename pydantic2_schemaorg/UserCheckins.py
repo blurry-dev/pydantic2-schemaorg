@@ -12,5 +12,5 @@ class UserCheckins(UserInteraction):
     See: https://schema.org/UserCheckins
     Model depth: 4
     """
-    type_: str = Field(default="UserCheckins", alias='@type', const=True)
-    
+
+    type_: str = Field(default="UserCheckins", alias="@type", const=True)

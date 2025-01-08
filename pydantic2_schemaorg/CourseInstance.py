@@ -16,24 +16,29 @@ class CourseInstance(Event):
     See: https://schema.org/CourseInstance
     Model depth: 3
     """
-    type_: str = Field(default="CourseInstance", alias='@type', const=True)
-    courseMode: Optional[Union[List[Union[AnyUrl, 'URL', str, 'Text']], AnyUrl, 'URL', str, 'Text']] = Field(
+
+    type_: str = Field(default="CourseInstance", alias="@type", const=True)
+    courseMode: Optional[
+        Union[List[Union[AnyUrl, "URL", str, "Text"]], AnyUrl, "URL", str, "Text"]
+    ] = Field(
         default=None,
-        description="The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. \"online\", \"onsite\" or \"blended\"; \"synchronous\" or \"asynchronous\"; \"full-time\" or \"part-time\") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous).",
+        description='The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous).',
     )
-    instructor: Optional[Union[List[Union['Person', str]], 'Person', str]] = Field(
+    instructor: Optional[Union[List[Union["Person", str]], "Person", str]] = Field(
         default=None,
         description="A person assigned to instruct or provide instructional assistance for the [[CourseInstance]].",
     )
-    courseWorkload: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    courseWorkload: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
-        description="The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, \"2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week\".",
+        description='The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, "2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week".',
     )
-    courseSchedule: Optional[Union[List[Union['Schedule', str]], 'Schedule', str]] = Field(
-        default=None,
-        description="Represents the length and pace of a course, expressed as a [[Schedule]].",
+    courseSchedule: Optional[Union[List[Union["Schedule", str]], "Schedule", str]] = (
+        Field(
+            default=None,
+            description="Represents the length and pace of a course, expressed as a [[Schedule]].",
+        )
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.URL import URL

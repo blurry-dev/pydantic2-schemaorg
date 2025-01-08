@@ -2,7 +2,9 @@ from __future__ import annotations
 
 
 from pydantic.v1 import Field
-from pydantic2_schemaorg.CertificationStatusEnumeration import CertificationStatusEnumeration
+from pydantic2_schemaorg.CertificationStatusEnumeration import (
+    CertificationStatusEnumeration,
+)
 
 
 class CertificationInactive(CertificationStatusEnumeration):
@@ -11,5 +13,5 @@ class CertificationInactive(CertificationStatusEnumeration):
     See: https://schema.org/CertificationInactive
     Model depth: 5
     """
-    type_: str = Field(default="CertificationInactive", alias='@type', const=True)
-    
+
+    type_: str = Field(default="CertificationInactive", alias="@type", const=True)

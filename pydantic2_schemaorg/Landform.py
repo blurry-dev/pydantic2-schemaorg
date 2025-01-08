@@ -13,5 +13,5 @@ class Landform(Place):
     See: https://schema.org/Landform
     Model depth: 3
     """
-    type_: str = Field(default="Landform", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Landform", alias="@type", const=True)

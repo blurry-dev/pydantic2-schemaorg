@@ -11,5 +11,5 @@ class RejectAction(AllocateAction):
     See: https://schema.org/RejectAction
     Model depth: 5
     """
-    type_: str = Field(default="RejectAction", alias='@type', const=True)
-    
+
+    type_: str = Field(default="RejectAction", alias="@type", const=True)

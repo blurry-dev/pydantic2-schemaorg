@@ -12,5 +12,5 @@ class NarcoticConsideration(AdultOrientedEnumeration):
     See: https://schema.org/NarcoticConsideration
     Model depth: 5
     """
-    type_: str = Field(default="NarcoticConsideration", alias='@type', const=True)
-    
+
+    type_: str = Field(default="NarcoticConsideration", alias="@type", const=True)

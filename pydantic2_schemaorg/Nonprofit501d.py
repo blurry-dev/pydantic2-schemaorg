@@ -11,5 +11,5 @@ class Nonprofit501d(USNonprofitType):
     See: https://schema.org/Nonprofit501d
     Model depth: 6
     """
-    type_: str = Field(default="Nonprofit501d", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Nonprofit501d", alias="@type", const=True)

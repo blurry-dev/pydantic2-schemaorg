@@ -2,7 +2,9 @@ from __future__ import annotations
 
 
 from pydantic.v1 import Field
-from pydantic2_schemaorg.IPTCDigitalSourceEnumeration import IPTCDigitalSourceEnumeration
+from pydantic2_schemaorg.IPTCDigitalSourceEnumeration import (
+    IPTCDigitalSourceEnumeration,
+)
 
 
 class CompositeWithTrainedAlgorithmicMediaDigitalSource(IPTCDigitalSourceEnumeration):
@@ -13,5 +15,9 @@ class CompositeWithTrainedAlgorithmicMediaDigitalSource(IPTCDigitalSourceEnumera
     See: https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource
     Model depth: 6
     """
-    type_: str = Field(default="CompositeWithTrainedAlgorithmicMediaDigitalSource", alias='@type', const=True)
-    
+
+    type_: str = Field(
+        default="CompositeWithTrainedAlgorithmicMediaDigitalSource",
+        alias="@type",
+        const=True,
+    )

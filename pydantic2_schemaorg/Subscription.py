@@ -2,7 +2,9 @@ from __future__ import annotations
 
 
 from pydantic.v1 import Field
-from pydantic2_schemaorg.PriceComponentTypeEnumeration import PriceComponentTypeEnumeration
+from pydantic2_schemaorg.PriceComponentTypeEnumeration import (
+    PriceComponentTypeEnumeration,
+)
 
 
 class Subscription(PriceComponentTypeEnumeration):
@@ -11,5 +13,5 @@ class Subscription(PriceComponentTypeEnumeration):
     See: https://schema.org/Subscription
     Model depth: 5
     """
-    type_: str = Field(default="Subscription", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Subscription", alias="@type", const=True)

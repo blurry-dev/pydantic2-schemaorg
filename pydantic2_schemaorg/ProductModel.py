@@ -14,20 +14,32 @@ class ProductModel(Product):
     See: https://schema.org/ProductModel
     Model depth: 3
     """
-    type_: str = Field(default="ProductModel", alias='@type', const=True)
-    isVariantOf: Optional[Union[List[Union['ProductModel', 'ProductGroup', str]], 'ProductModel', 'ProductGroup', str]] = Field(
+
+    type_: str = Field(default="ProductModel", alias="@type", const=True)
+    isVariantOf: Optional[
+        Union[
+            List[Union["ProductModel", "ProductGroup", str]],
+            "ProductModel",
+            "ProductGroup",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.",
     )
-    predecessorOf: Optional[Union[List[Union['ProductModel', str]], 'ProductModel', str]] = Field(
+    predecessorOf: Optional[
+        Union[List[Union["ProductModel", str]], "ProductModel", str]
+    ] = Field(
         default=None,
         description="A pointer from a previous, often discontinued variant of the product to its newer variant.",
     )
-    successorOf: Optional[Union[List[Union['ProductModel', str]], 'ProductModel', str]] = Field(
+    successorOf: Optional[
+        Union[List[Union["ProductModel", str]], "ProductModel", str]
+    ] = Field(
         default=None,
         description="A pointer from a newer variant of a product to its previous, often discontinued predecessor.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.ProductGroup import ProductGroup

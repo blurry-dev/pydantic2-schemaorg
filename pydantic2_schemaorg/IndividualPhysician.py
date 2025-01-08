@@ -16,12 +16,15 @@ class IndividualPhysician(Physician):
     See: https://schema.org/IndividualPhysician
     Model depth: 5
     """
-    type_: str = Field(default="IndividualPhysician", alias='@type', const=True)
-    practicesAt: Optional[Union[List[Union['MedicalOrganization', str]], 'MedicalOrganization', str]] = Field(
+
+    type_: str = Field(default="IndividualPhysician", alias="@type", const=True)
+    practicesAt: Optional[
+        Union[List[Union["MedicalOrganization", str]], "MedicalOrganization", str]
+    ] = Field(
         default=None,
         description="A [[MedicalOrganization]] where the [[IndividualPhysician]] practices.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.MedicalOrganization import MedicalOrganization

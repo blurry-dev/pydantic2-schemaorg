@@ -11,5 +11,5 @@ class ChildCare(LocalBusiness):
     See: https://schema.org/ChildCare
     Model depth: 4
     """
-    type_: str = Field(default="ChildCare", alias='@type', const=True)
-    
+
+    type_: str = Field(default="ChildCare", alias="@type", const=True)

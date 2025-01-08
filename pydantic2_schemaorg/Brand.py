@@ -15,24 +15,35 @@ class Brand(Intangible):
     See: https://schema.org/Brand
     Model depth: 3
     """
-    type_: str = Field(default="Brand", alias='@type', const=True)
-    logo: Optional[Union[List[Union[AnyUrl, 'URL', 'ImageObject', str]], AnyUrl, 'URL', 'ImageObject', str]] = Field(
+
+    type_: str = Field(default="Brand", alias="@type", const=True)
+    logo: Optional[
+        Union[
+            List[Union[AnyUrl, "URL", "ImageObject", str]],
+            AnyUrl,
+            "URL",
+            "ImageObject",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="An associated logo.",
     )
-    aggregateRating: Optional[Union[List[Union['AggregateRating', str]], 'AggregateRating', str]] = Field(
+    aggregateRating: Optional[
+        Union[List[Union["AggregateRating", str]], "AggregateRating", str]
+    ] = Field(
         default=None,
         description="The overall rating, based on a collection of reviews or ratings, of the item.",
     )
-    slogan: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    slogan: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="A slogan or motto associated with the item.",
     )
-    review: Optional[Union[List[Union['Review', str]], 'Review', str]] = Field(
+    review: Optional[Union[List[Union["Review", str]], "Review", str]] = Field(
         default=None,
         description="A review of the item.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.URL import URL

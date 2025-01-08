@@ -11,5 +11,5 @@ class Canal(BodyOfWater):
     See: https://schema.org/Canal
     Model depth: 5
     """
-    type_: str = Field(default="Canal", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Canal", alias="@type", const=True)

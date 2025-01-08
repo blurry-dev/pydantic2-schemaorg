@@ -15,5 +15,5 @@ class WebContent(CreativeWork):
     See: https://schema.org/WebContent
     Model depth: 3
     """
-    type_: str = Field(default="WebContent", alias='@type', const=True)
-    
+
+    type_: str = Field(default="WebContent", alias="@type", const=True)

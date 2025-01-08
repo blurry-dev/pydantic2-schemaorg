@@ -11,5 +11,7 @@ class ExampleMeasurementMethodEnum(MeasurementMethodEnum):
     See: https://schema.org/ExampleMeasurementMethodEnum
     Model depth: 5
     """
-    type_: str = Field(default="ExampleMeasurementMethodEnum", alias='@type', const=True)
-    
+
+    type_: str = Field(
+        default="ExampleMeasurementMethodEnum", alias="@type", const=True
+    )

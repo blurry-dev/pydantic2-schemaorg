@@ -18,16 +18,25 @@ class DefinedTerm(Intangible):
     See: https://schema.org/DefinedTerm
     Model depth: 3
     """
-    type_: str = Field(default="DefinedTerm", alias='@type', const=True)
-    inDefinedTermSet: Optional[Union[List[Union[AnyUrl, 'URL', 'DefinedTermSet', str]], AnyUrl, 'URL', 'DefinedTermSet', str]] = Field(
+
+    type_: str = Field(default="DefinedTerm", alias="@type", const=True)
+    inDefinedTermSet: Optional[
+        Union[
+            List[Union[AnyUrl, "URL", "DefinedTermSet", str]],
+            AnyUrl,
+            "URL",
+            "DefinedTermSet",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="A [[DefinedTermSet]] that contains this term.",
     )
-    termCode: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    termCode: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]].",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.URL import URL

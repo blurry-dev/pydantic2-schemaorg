@@ -11,5 +11,5 @@ class ByInvoice(PaymentMethodType):
     See: https://schema.org/ByInvoice
     Model depth: 5
     """
-    type_: str = Field(default="ByInvoice", alias='@type', const=True)
-    
+
+    type_: str = Field(default="ByInvoice", alias="@type", const=True)

@@ -11,5 +11,5 @@ class IOSPlatform(DigitalPlatformEnumeration):
     See: https://schema.org/IOSPlatform
     Model depth: 5
     """
-    type_: str = Field(default="IOSPlatform", alias='@type', const=True)
-    
+
+    type_: str = Field(default="IOSPlatform", alias="@type", const=True)

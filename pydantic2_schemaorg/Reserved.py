@@ -11,5 +11,5 @@ class Reserved(ItemAvailability):
     See: https://schema.org/Reserved
     Model depth: 5
     """
-    type_: str = Field(default="Reserved", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Reserved", alias="@type", const=True)

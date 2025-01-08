@@ -13,5 +13,5 @@ class WarrantyScope(Enumeration):
     See: https://schema.org/WarrantyScope
     Model depth: 4
     """
-    type_: str = Field(default="WarrantyScope", alias='@type', const=True)
-    
+
+    type_: str = Field(default="WarrantyScope", alias="@type", const=True)

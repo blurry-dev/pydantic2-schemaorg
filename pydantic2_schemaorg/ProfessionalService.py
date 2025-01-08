@@ -16,5 +16,5 @@ class ProfessionalService(LocalBusiness):
     See: https://schema.org/ProfessionalService
     Model depth: 4
     """
-    type_: str = Field(default="ProfessionalService", alias='@type', const=True)
-    
+
+    type_: str = Field(default="ProfessionalService", alias="@type", const=True)

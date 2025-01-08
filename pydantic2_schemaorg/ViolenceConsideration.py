@@ -11,5 +11,5 @@ class ViolenceConsideration(AdultOrientedEnumeration):
     See: https://schema.org/ViolenceConsideration
     Model depth: 5
     """
-    type_: str = Field(default="ViolenceConsideration", alias='@type', const=True)
-    
+
+    type_: str = Field(default="ViolenceConsideration", alias="@type", const=True)

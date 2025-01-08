@@ -12,5 +12,7 @@ class UnclassifiedAdultConsideration(AdultOrientedEnumeration):
     See: https://schema.org/UnclassifiedAdultConsideration
     Model depth: 5
     """
-    type_: str = Field(default="UnclassifiedAdultConsideration", alias='@type', const=True)
-    
+
+    type_: str = Field(
+        default="UnclassifiedAdultConsideration", alias="@type", const=True
+    )

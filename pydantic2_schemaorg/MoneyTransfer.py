@@ -15,16 +15,33 @@ class MoneyTransfer(TransferAction):
     See: https://schema.org/MoneyTransfer
     Model depth: 4
     """
-    type_: str = Field(default="MoneyTransfer", alias='@type', const=True)
-    amount: Optional[Union[List[Union[StrictInt, StrictFloat, 'Number', 'MonetaryAmount', str]], StrictInt, StrictFloat, 'Number', 'MonetaryAmount', str]] = Field(
+
+    type_: str = Field(default="MoneyTransfer", alias="@type", const=True)
+    amount: Optional[
+        Union[
+            List[Union[StrictInt, StrictFloat, "Number", "MonetaryAmount", str]],
+            StrictInt,
+            StrictFloat,
+            "Number",
+            "MonetaryAmount",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The amount of money.",
     )
-    beneficiaryBank: Optional[Union[List[Union[str, 'Text', 'BankOrCreditUnion']], str, 'Text', 'BankOrCreditUnion']] = Field(
+    beneficiaryBank: Optional[
+        Union[
+            List[Union[str, "Text", "BankOrCreditUnion"]],
+            str,
+            "Text",
+            "BankOrCreditUnion",
+        ]
+    ] = Field(
         default=None,
         description="A bank or bank’s branch, financial institution or international financial institution operating the beneficiary’s bank account or releasing funds for the beneficiary.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Number import Number

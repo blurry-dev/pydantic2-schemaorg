@@ -11,5 +11,5 @@ class HealthcareConsideration(AdultOrientedEnumeration):
     See: https://schema.org/HealthcareConsideration
     Model depth: 5
     """
-    type_: str = Field(default="HealthcareConsideration", alias='@type', const=True)
-    
+
+    type_: str = Field(default="HealthcareConsideration", alias="@type", const=True)

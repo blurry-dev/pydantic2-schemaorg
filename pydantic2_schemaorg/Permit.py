@@ -15,36 +15,54 @@ class Permit(Intangible):
     See: https://schema.org/Permit
     Model depth: 3
     """
-    type_: str = Field(default="Permit", alias='@type', const=True)
-    validUntil: Optional[Union[List[Union[date, 'Date', str]], date, 'Date', str]] = Field(
-        default=None,
-        description="The date when the item is no longer valid.",
+
+    type_: str = Field(default="Permit", alias="@type", const=True)
+    validUntil: Optional[Union[List[Union[date, "Date", str]], date, "Date", str]] = (
+        Field(
+            default=None,
+            description="The date when the item is no longer valid.",
+        )
     )
-    validIn: Optional[Union[List[Union['AdministrativeArea', str]], 'AdministrativeArea', str]] = Field(
+    validIn: Optional[
+        Union[List[Union["AdministrativeArea", str]], "AdministrativeArea", str]
+    ] = Field(
         default=None,
         description="The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]].",
     )
-    validFrom: Optional[Union[List[Union[datetime, 'DateTime', date, 'Date', str]], datetime, 'DateTime', date, 'Date', str]] = Field(
+    validFrom: Optional[
+        Union[
+            List[Union[datetime, "DateTime", date, "Date", str]],
+            datetime,
+            "DateTime",
+            date,
+            "Date",
+            str,
+        ]
+    ] = Field(
         default=None,
         description="The date when the item becomes valid.",
     )
-    issuedThrough: Optional[Union[List[Union['Service', str]], 'Service', str]] = Field(
+    issuedThrough: Optional[Union[List[Union["Service", str]], "Service", str]] = Field(
         default=None,
         description="The service through which the permit was granted.",
     )
-    issuedBy: Optional[Union[List[Union['Organization', str]], 'Organization', str]] = Field(
-        default=None,
-        description="The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].",
+    issuedBy: Optional[Union[List[Union["Organization", str]], "Organization", str]] = (
+        Field(
+            default=None,
+            description="The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].",
+        )
     )
-    permitAudience: Optional[Union[List[Union['Audience', str]], 'Audience', str]] = Field(
-        default=None,
-        description="The target audience for this permit.",
+    permitAudience: Optional[Union[List[Union["Audience", str]], "Audience", str]] = (
+        Field(
+            default=None,
+            description="The target audience for this permit.",
+        )
     )
-    validFor: Optional[Union[List[Union['Duration', str]], 'Duration', str]] = Field(
+    validFor: Optional[Union[List[Union["Duration", str]], "Duration", str]] = Field(
         default=None,
         description="The duration of validity of a permit or similar thing.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Date import Date

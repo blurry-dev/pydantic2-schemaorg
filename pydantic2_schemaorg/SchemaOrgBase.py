@@ -8,32 +8,26 @@ from pydantic.v1.typing import update_model_forward_refs
 from pydantic2_schemaorg.ISO8601.ISO8601Date import ISO8601Date
 from pydantic2_schemaorg.__types__ import types
 
-updated_models=set()
+updated_models = set()
+
 
 class SchemaOrgBase(BaseModel):
-    #JSON-LD fields
-    reverse_ : Optional[Any] = Field(default=None,alias='@reverse')
-    id_ : Optional[Any] = Field(default=None,alias='@id')
-    context_ : Optional[Any] = Field(default=None,alias='@context')
-    graph_ : Optional[Any] = Field(default=None,alias='@graph')
+    # JSON-LD fields
+    reverse_: Optional[Any] = Field(default=None, alias="@reverse")
+    id_: Optional[Any] = Field(default=None, alias="@id")
+    context_: Optional[Any] = Field(default=None, alias="@context")
+    graph_: Optional[Any] = Field(default=None, alias="@graph")
 
     def dict(self, *args, **kwargs):
-        defaults = {
-            "exclude_none": True,
-            "by_alias": True
-        }
+        defaults = {"exclude_none": True, "by_alias": True}
         return super().dict(*args, **dict(defaults, **kwargs))
 
     def json(self, *args, **kwargs):
-        defaults = {
-            "exclude_none": True,
-            "by_alias": True
-        }
+        defaults = {"exclude_none": True, "by_alias": True}
         return super().json(*args, **dict(defaults, **kwargs))
 
     class Config:
         allow_population_by_field_name = True
-
 
     @classmethod
     def get_classes_for_forward_ref(cls, field: Any) -> List[tuple]:
@@ -44,7 +38,9 @@ class SchemaOrgBase(BaseModel):
             v = u.co_consts
             for w in v:
                 pydanticschema_org_type = types[w]
-                mod = __import__(pydanticschema_org_type[1], fromlist=[pydanticschema_org_type[0]])
+                mod = __import__(
+                    pydanticschema_org_type[1], fromlist=[pydanticschema_org_type[0]]
+                )
                 class_ = getattr(mod, pydanticschema_org_type[0])
                 classes.append((w, class_))
         return classes
@@ -64,17 +60,31 @@ class SchemaOrgBase(BaseModel):
         """
         Try to update ForwardRefs on fields based on this Model, globalns and localns.
         """
-        locals = {'Optional': Optional, 'List': List, 'Union': Union, 'StrictBool': StrictBool, 'AnyUrl': AnyUrl,
-                  'Decimal': Decimal, 'time': time, 'datetime': datetime, 'date': date,'ISO8601Date':ISO8601Date, 'StrictInt':StrictInt, 'StrictFloat': StrictFloat}
+        locals = {
+            "Optional": Optional,
+            "List": List,
+            "Union": Union,
+            "StrictBool": StrictBool,
+            "AnyUrl": AnyUrl,
+            "Decimal": Decimal,
+            "time": time,
+            "datetime": datetime,
+            "date": date,
+            "ISO8601Date": ISO8601Date,
+            "StrictInt": StrictInt,
+            "StrictFloat": StrictFloat,
+        }
         for cls_ in cls.mro():
-            if hasattr(cls_, 'get_local_ns'):
+            if hasattr(cls_, "get_local_ns"):
                 locals.update(cls_.get_local_ns())
-        update_model_forward_refs(cls, cls.__fields__.values(), cls.__config__.json_encoders, locals)
+        update_model_forward_refs(
+            cls, cls.__fields__.values(), cls.__config__.json_encoders, locals
+        )
 
     @classmethod
     def _update_all_fields(cls):
         for cls_ in cls.mro():
-            if hasattr(cls_, 'get_classes_for_forward_ref'):
+            if hasattr(cls_, "get_classes_for_forward_ref"):
                 for k in cls_.__fields__.keys():
                     if k not in updated_models:
                         field = cls_.__fields__[k]

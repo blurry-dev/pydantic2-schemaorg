@@ -11,5 +11,5 @@ class AcceptAction(AllocateAction):
     See: https://schema.org/AcceptAction
     Model depth: 5
     """
-    type_: str = Field(default="AcceptAction", alias='@type', const=True)
-    
+
+    type_: str = Field(default="AcceptAction", alias="@type", const=True)

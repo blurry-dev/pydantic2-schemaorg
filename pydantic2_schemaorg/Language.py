@@ -14,5 +14,5 @@ class Language(Intangible):
     See: https://schema.org/Language
     Model depth: 3
     """
-    type_: str = Field(default="Language", alias='@type', const=True)
-    
+
+    type_: str = Field(default="Language", alias="@type", const=True)

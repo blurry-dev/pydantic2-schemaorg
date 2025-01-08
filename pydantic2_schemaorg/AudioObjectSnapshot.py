@@ -14,5 +14,5 @@ class AudioObjectSnapshot(AudioObject):
     See: https://schema.org/AudioObjectSnapshot
     Model depth: 5
     """
-    type_: str = Field(default="AudioObjectSnapshot", alias='@type', const=True)
-    
+
+    type_: str = Field(default="AudioObjectSnapshot", alias="@type", const=True)

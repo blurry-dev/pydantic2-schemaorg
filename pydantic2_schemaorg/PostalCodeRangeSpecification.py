@@ -15,16 +15,19 @@ class PostalCodeRangeSpecification(StructuredValue):
     See: https://schema.org/PostalCodeRangeSpecification
     Model depth: 4
     """
-    type_: str = Field(default="PostalCodeRangeSpecification", alias='@type', const=True)
-    postalCodeBegin: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+
+    type_: str = Field(
+        default="PostalCodeRangeSpecification", alias="@type", const=True
+    )
+    postalCodeBegin: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="First postal code in a range (included).",
     )
-    postalCodeEnd: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
+    postalCodeEnd: Optional[Union[List[Union[str, "Text"]], str, "Text"]] = Field(
         default=None,
         description="Last postal code in the range (included). Needs to be after [[postalCodeBegin]].",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Text import Text

@@ -15,12 +15,15 @@ class ArchiveOrganization(LocalBusiness):
     See: https://schema.org/ArchiveOrganization
     Model depth: 4
     """
-    type_: str = Field(default="ArchiveOrganization", alias='@type', const=True)
-    archiveHeld: Optional[Union[List[Union['ArchiveComponent', str]], 'ArchiveComponent', str]] = Field(
+
+    type_: str = Field(default="ArchiveOrganization", alias="@type", const=True)
+    archiveHeld: Optional[
+        Union[List[Union["ArchiveComponent", str]], "ArchiveComponent", str]
+    ] = Field(
         default=None,
         description="Collection, [fonds](https://en.wikipedia.org/wiki/Fonds), or item held, kept or maintained by an [[ArchiveOrganization]].",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.ArchiveComponent import ArchiveComponent

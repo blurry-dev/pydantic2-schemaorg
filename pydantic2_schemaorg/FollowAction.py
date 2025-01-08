@@ -22,12 +22,15 @@ class FollowAction(InteractAction):
     See: https://schema.org/FollowAction
     Model depth: 4
     """
-    type_: str = Field(default="FollowAction", alias='@type', const=True)
-    followee: Optional[Union[List[Union['Person', 'Organization', str]], 'Person', 'Organization', str]] = Field(
+
+    type_: str = Field(default="FollowAction", alias="@type", const=True)
+    followee: Optional[
+        Union[List[Union["Person", "Organization", str]], "Person", "Organization", str]
+    ] = Field(
         default=None,
         description="A sub property of object. The person or organization being followed.",
     )
-    
+
 
 if TYPE_CHECKING:
     from pydantic2_schemaorg.Person import Person

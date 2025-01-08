@@ -11,5 +11,5 @@ class CheckInAdvance(PaymentMethodType):
     See: https://schema.org/CheckInAdvance
     Model depth: 5
     """
-    type_: str = Field(default="CheckInAdvance", alias='@type', const=True)
-    
+
+    type_: str = Field(default="CheckInAdvance", alias="@type", const=True)

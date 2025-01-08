@@ -12,5 +12,5 @@ class UserDownloads(UserInteraction):
     See: https://schema.org/UserDownloads
     Model depth: 4
     """
-    type_: str = Field(default="UserDownloads", alias='@type', const=True)
-    
+
+    type_: str = Field(default="UserDownloads", alias="@type", const=True)
