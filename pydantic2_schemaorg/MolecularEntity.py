@@ -50,7 +50,7 @@ class MolecularEntity(BioChemEntity):
     )
     smiles: Optional[Union[List[Union[str, 'Text']], str, 'Text']] = Field(
         default=None,
-        description="A specification in form of a line notation for describing the structure of chemical species using short ASCII strings. Double bond stereochemistry \ indicators may need to be escaped in the string in formats where the backslash is an escape character.",
+        description="A specification in form of a line notation for describing the structure of chemical species using short ASCII strings. Double bond stereochemistry indicators may need to be escaped in the string in formats where the backslash is an escape character.",
     )
     
 

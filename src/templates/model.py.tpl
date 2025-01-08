@@ -13,7 +13,7 @@ from {{import_.classPath}} import {{import_.classes_ | sort|join(', ')}}
 
 
 class {{ model.valid_name }}({{model.parents| sort(attribute='depth', reverse=True) | map(attribute='valid_name') | join(', ')}}):
-    """{{ model.description | replace('\\n','\n') | format_docstring}}
+    """{{ model.description | replace('\\n','\n') | replace('\\', '') | format_docstring}}
 
     See: https://schema.org/{{ model.name }}
     Model depth: {{model.depth}}
