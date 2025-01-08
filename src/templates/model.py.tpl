@@ -23,7 +23,7 @@ class {{ model.valid_name }}({{model.parents| sort(attribute='depth', reverse=Tr
     {{ field.valid_name }}: {{ field.type }} = Field(
         default=None,
         {%- if field.valid_name != field.name -%} alias="{{ field.name }}",{% endif %}
-        description="{{ field.description | replace('\\n','\n') | format_description }}",
+        description="{{ field.description | replace('\\n','\n') | replace('\\', '') | format_description }}",
     )
     {% endfor %}
 {% if model.pydantic_imports %}
